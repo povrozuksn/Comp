@@ -39,9 +39,9 @@
             // Level1Panel
             // 
             this.Level1Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Level1Panel.Location = new System.Drawing.Point(0, 257);
+            this.Level1Panel.Location = new System.Drawing.Point(0, 215);
             this.Level1Panel.Name = "Level1Panel";
-            this.Level1Panel.Size = new System.Drawing.Size(1009, 343);
+            this.Level1Panel.Size = new System.Drawing.Size(1000, 385);
             this.Level1Panel.TabIndex = 3;
             // 
             // Level0Panel
@@ -51,8 +51,9 @@
             this.Level0Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Level0Panel.Location = new System.Drawing.Point(0, 0);
             this.Level0Panel.Name = "Level0Panel";
-            this.Level0Panel.Size = new System.Drawing.Size(1009, 261);
+            this.Level0Panel.Size = new System.Drawing.Size(1000, 209);
             this.Level0Panel.TabIndex = 2;
+            this.Level0Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Level0Panel_Paint);
             // 
             // label1
             // 
@@ -68,7 +69,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(23, 19);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(228, 219);
+            this.pictureBox1.Size = new System.Drawing.Size(195, 175);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -82,7 +83,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Level1UserControl";
-            this.Size = new System.Drawing.Size(1009, 600);
+            this.Size = new System.Drawing.Size(1000, 600);
             this.Level0Panel.ResumeLayout(false);
             this.Level0Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

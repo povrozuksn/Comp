@@ -41,6 +41,7 @@
             this.CompsPanel.Name = "CompsPanel";
             this.CompsPanel.Size = new System.Drawing.Size(1197, 469);
             this.CompsPanel.TabIndex = 2;
+            this.CompsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.CompsPanel_Paint);
             // 
             // label1
             // 

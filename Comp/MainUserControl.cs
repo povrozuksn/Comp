@@ -67,5 +67,10 @@ namespace Comp
             Controls.Add(level1UC);
             level1UC.Dock = DockStyle.None;
         }
+
+        private void CompsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }    
 }

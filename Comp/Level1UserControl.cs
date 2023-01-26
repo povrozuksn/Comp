@@ -38,7 +38,7 @@ namespace Comp
                     pb.Load("../../Pictures/" + lev1[i + 3]);
                 }
                 catch (Exception) { }
-                pb.Location = new Point(x, 50);
+                pb.Location = new Point(x, 30);
                 pb.Size = new Size(100, 100);
                 pb.SizeMode = PictureBoxSizeMode.Zoom;
                 pb.Tag = lev1[i];
@@ -46,7 +46,7 @@ namespace Comp
                 Level1Panel.Controls.Add(pb);
 
                 Label lbl = new Label();
-                lbl.Location = new Point(x, 160);
+                lbl.Location = new Point(x, 140);
                 lbl.Size = new Size(200, 30);
                 lbl.Font = new Font("Microsoft Sans Serif", 12);
                 lbl.Text = lev1[i + 2];
@@ -65,15 +65,24 @@ namespace Comp
         private void pictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
-            Level2 level2 = new Level2(pb.Tag.ToString());
-            level2.ShowDialog();
+            Level2UserControl level2UC = new Level2UserControl(pb.Tag.ToString());
+            Controls.Clear();
+            Controls.Add(level2UC);
+            level2UC.Dock = DockStyle.None;
         }
 
         private void label_Click(object sender, EventArgs e)
         {
-            Label pb = (Label)sender;
-            Level2 level2 = new Level2(pb.Tag.ToString());
-            level2.ShowDialog();
+            Label lbl = (Label)sender;
+            Level2UserControl level2UC = new Level2UserControl(lbl.Tag.ToString());
+            Controls.Clear();
+            Controls.Add(level2UC);
+            level2UC.Dock = DockStyle.None;
+        }
+
+        private void Level0Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

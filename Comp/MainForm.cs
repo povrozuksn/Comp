@@ -29,7 +29,31 @@ namespace Comp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            string id_main;
+            string id_level1;
 
+            List<string> comps = SQLClass.Select("SELECT ID, Name FROM main");
+            for(int i=0; i < comps.Count; i+=2)
+            {
+                id_main = comps[i];
+                TreeNode node0 = new TreeNode(comps[i+1]);
+                treeView1.Nodes[0].Nodes.Add(node0);
+
+                List<string> level1 = SQLClass.Select("SELECT ID, Name FROM level1 WHERE id_main = '" + id_main + "'");
+                for(int j=0; j < level1.Count; j+=2)
+                {
+                    id_level1 = level1[j];
+                    TreeNode node1 = new TreeNode(level1[j+1]); 
+                    node0.Nodes.Add(node1);
+
+                    List<string> level2 = SQLClass.Select("SELECT ID, Name FROM level2 WHERE id_level1 = '" + id_level1 + "'");
+                    for(int g=0; g<level2.Count; g+=2)
+                    {
+                        TreeNode node2 = new TreeNode(level2[g+1]);
+                        node1.Nodes.Add(node2);
+                    }
+                }
+            }
         }
 
         private void AuthButton_Click(object sender, EventArgs e)

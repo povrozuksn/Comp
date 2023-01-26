@@ -62,11 +62,11 @@
     <Compile Include="Level1UserControl.Designer.cs">
       <DependentUpon>Level1UserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Level2.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Level2UserControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Level2.Designer.cs">
-      <DependentUpon>Level2.cs</DependentUpon>
+    <Compile Include="Level2UserControl.Designer.cs">
+      <DependentUpon>Level2UserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -95,8 +95,8 @@
     <EmbeddedResource Include="Level1UserControl.resx">
       <DependentUpon>Level1UserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Level2.resx">
-      <DependentUpon>Level2.cs</DependentUpon>
+    <EmbeddedResource Include="Level2UserControl.resx">
+      <DependentUpon>Level2UserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
