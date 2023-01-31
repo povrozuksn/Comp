@@ -16,13 +16,14 @@ namespace Comp
         {
             InitializeComponent();
 
+            List<string> comps = SQLClass.Select("SELECT Name, Image FROM main WHERE ID = '" + id_main + "'");
             List<string> lev1 = SQLClass.Select("SELECT ID, id_main, Name, Image, Specs, Quantity, Price FROM level1 WHERE id_main = '" + id_main + "'");
 
-            Text = lev1[2];
-            label1.Text = lev1[2];
+            Text = comps[0];
+            label1.Text = comps[0];
             try
             {
-                pictureBox1.Load("../../Pictures/" + lev1[3]);
+                pictureBox1.Load("../../Pictures/" + comps[1]);
             }
             catch (Exception) { };
 

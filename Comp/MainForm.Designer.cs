@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Комплекты");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Комплекты");
             this.AuthPanel = new System.Windows.Forms.Panel();
             this.HelloLabel = new System.Windows.Forms.Label();
             this.AccountButton = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.AuthPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.AuthPanel.Location = new System.Drawing.Point(0, 0);
             this.AuthPanel.Name = "AuthPanel";
-            this.AuthPanel.Size = new System.Drawing.Size(1502, 68);
+            this.AuthPanel.Size = new System.Drawing.Size(1924, 68);
             this.AuthPanel.TabIndex = 0;
             // 
             // HelloLabel
@@ -140,13 +140,14 @@
             this.AdminPanelButton.Text = "Панель администратора";
             this.AdminPanelButton.UseVisualStyleBackColor = true;
             this.AdminPanelButton.Visible = false;
+            this.AdminPanelButton.Click += new System.EventHandler(this.AdminPanelButton_Click);
             // 
             // ViewPanel
             // 
             this.ViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ViewPanel.Location = new System.Drawing.Point(403, 3);
+            this.ViewPanel.Location = new System.Drawing.Point(515, 3);
             this.ViewPanel.Name = "ViewPanel";
-            this.ViewPanel.Size = new System.Drawing.Size(1096, 605);
+            this.ViewPanel.Size = new System.Drawing.Size(1406, 605);
             this.ViewPanel.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -161,7 +162,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1502, 611);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1924, 611);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // treeView1
@@ -170,18 +171,19 @@
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Узел0";
-            treeNode1.Text = "Комплекты";
+            treeNode2.Name = "Узел0";
+            treeNode2.Text = "Комплекты";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.treeView1.Size = new System.Drawing.Size(394, 605);
+            treeNode2});
+            this.treeView1.Size = new System.Drawing.Size(506, 605);
             this.treeView1.TabIndex = 2;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1502, 679);
+            this.ClientSize = new System.Drawing.Size(1924, 679);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.AuthPanel);
             this.Name = "MainForm";

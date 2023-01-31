@@ -37,13 +37,15 @@ namespace Comp
             {
                 id_main = comps[i];
                 TreeNode node0 = new TreeNode(comps[i+1]);
+                node0.Tag = comps[i];
                 treeView1.Nodes[0].Nodes.Add(node0);
 
                 List<string> level1 = SQLClass.Select("SELECT ID, Name FROM level1 WHERE id_main = '" + id_main + "'");
                 for(int j=0; j < level1.Count; j+=2)
                 {
                     id_level1 = level1[j];
-                    TreeNode node1 = new TreeNode(level1[j+1]); 
+                    TreeNode node1 = new TreeNode(level1[j+1]);
+                    node1.Tag = level1[j];
                     node0.Nodes.Add(node1);
 
                     List<string> level2 = SQLClass.Select("SELECT ID, Name FROM level2 WHERE id_level1 = '" + id_level1 + "'");
@@ -110,6 +112,45 @@ namespace Comp
         {
             AccountForm af = new AccountForm();
             af.ShowDialog();
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if(e.Node.Level == 0)
+            {
+                MainUserControl mainUC = new MainUserControl();
+                mainUC.Dock = DockStyle.Fill;
+                ViewPanel.Controls.Clear();
+                ViewPanel.Controls.Add(mainUC);
+            }
+
+            else if(e.Node.Level == 1)
+            {
+                Level1UserControl level1UC = new Level1UserControl(e.Node.Tag.ToString());
+                ViewPanel.Controls.Clear();
+                ViewPanel.Controls.Add(level1UC);
+                level1UC.Dock = DockStyle.None;
+            }
+
+            else if (e.Node.Level == 2)
+            {
+                Level2UserControl level2UC = new Level2UserControl(e.Node.Tag.ToString());
+                ViewPanel.Controls.Clear();
+                ViewPanel.Controls.Add(level2UC);
+                level2UC.Dock = DockStyle.None;
+            }
+
+
+
+            //e.Node.Parent
+        }
+
+        private void AdminPanelButton_Click(object sender, EventArgs e)
+        {
+            AdminUserControl adminUC = new AdminUserControl();
+            ViewPanel.Controls.Clear();
+            ViewPanel.Controls.Add(adminUC);
+            adminUC.Dock = DockStyle.None;
         }
     }
 }

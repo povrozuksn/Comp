@@ -34,3 +34,5 @@ C:\Users\root\Source\Repos\Comp1\Comp\obj\Debug\Comp.csproj.CopyComplete
 C:\Users\root\Source\Repos\Comp1\Comp\obj\Debug\Comp.exe
 C:\Users\root\Source\Repos\Comp1\Comp\obj\Debug\Comp.pdb
 C:\Users\root\Source\Repos\Comp1\Comp\obj\Debug\Comp.Level2UserControl.resources
+C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.AdminUserControl.resources
+C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.AdminUsersUserControl.resources
