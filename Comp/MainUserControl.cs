@@ -30,7 +30,7 @@ namespace Comp
                 }
                 catch (Exception) { }
                 pb.Location = new Point(x, 50);
-                pb.Size = new Size(200, 180);
+                pb.Size = new Size(180, 180);
                 pb.SizeMode = PictureBoxSizeMode.Zoom;
                 pb.Tag = comps[i];
                 pb.Click += new EventHandler(pictureBox_Click);
@@ -38,14 +38,14 @@ namespace Comp
 
                 Label lbl = new Label();
                 lbl.Location = new Point(x, 240);
-                lbl.Size = new Size(200, 30);
+                lbl.Size = new Size(180, 30);
                 lbl.Font = new Font("Microsoft Sans Serif", 12);
                 lbl.Text = comps[i + 1];
                 lbl.Tag = comps[i];
                 lbl.Click += new EventHandler(label_Click);
                 CompsPanel.Controls.Add(lbl);
 
-                x += 210;
+                x += 190;
             }
 
         }

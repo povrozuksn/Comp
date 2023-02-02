@@ -37,17 +37,18 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(387, 257);
+            this.button4.Location = new System.Drawing.Point(82, 53);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(245, 89);
             this.button4.TabIndex = 7;
-            this.button4.Text = "Управление бронированием";
+            this.button4.Text = "Управление комплектами";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(111, 257);
+            this.button3.Location = new System.Drawing.Point(402, 53);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(245, 89);
             this.button3.TabIndex = 6;
@@ -58,22 +59,24 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(387, 131);
+            this.button2.Location = new System.Drawing.Point(82, 306);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(245, 89);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Управление номерами";
+            this.button2.Text = "Управление компонентами";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(111, 131);
+            this.button1.Location = new System.Drawing.Point(82, 179);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(245, 89);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Управление гостиницами";
+            this.button1.Text = "Управление подкатегориями";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdminUserControl
             // 

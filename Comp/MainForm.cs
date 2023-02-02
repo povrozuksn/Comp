@@ -66,6 +66,7 @@ namespace Comp
             if (AuthButton.Text == "Выйти")
             {
                 Login = "";
+                isAdmin = false;
                 AuthPanel.Controls.Clear();
                 AuthButton.Text = "Войти";
                 AuthPanel.Controls.Add(AuthButton);
@@ -77,7 +78,10 @@ namespace Comp
                 AuthPanel.Controls.Add(LoginTextBox);
                 PaswTextBox.Text = "";
                 AuthPanel.Controls.Add(PaswTextBox);
-
+                MainUserControl mainUC = new MainUserControl();
+                mainUC.Dock = DockStyle.Fill;
+                ViewPanel.Controls.Clear();
+                ViewPanel.Controls.Add(mainUC);
             }
             else
             {
@@ -116,7 +120,7 @@ namespace Comp
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if(e.Node.Level == 0)
+            if(e.Node.Level == 0 && e.Node.Text == "Комплекты")
             {
                 MainUserControl mainUC = new MainUserControl();
                 mainUC.Dock = DockStyle.Fill;
@@ -124,7 +128,7 @@ namespace Comp
                 ViewPanel.Controls.Add(mainUC);
             }
 
-            else if(e.Node.Level == 1)
+            else if(e.Node.Level == 1 && e.Node.Parent.Text == "Комплекты")
             {
                 Level1UserControl level1UC = new Level1UserControl(e.Node.Tag.ToString());
                 ViewPanel.Controls.Clear();
@@ -132,7 +136,7 @@ namespace Comp
                 level1UC.Dock = DockStyle.None;
             }
 
-            else if (e.Node.Level == 2)
+            else if (e.Node.Level == 2 && e.Node.Parent.Parent.Text == "Комплекты")
             {
                 Level2UserControl level2UC = new Level2UserControl(e.Node.Tag.ToString());
                 ViewPanel.Controls.Clear();
@@ -140,9 +144,21 @@ namespace Comp
                 level2UC.Dock = DockStyle.None;
             }
 
+            else if(e.Node.Level == 0 && e.Node.Text == "Вход админа")
+            {
+                AdminUserControl adminUC = new AdminUserControl();
+                ViewPanel.Controls.Clear();
+                ViewPanel.Controls.Add(adminUC);
+                adminUC.Dock = DockStyle.None;
+            }
 
-
-            //e.Node.Parent
+            else if (e.Node.Level == 1 && e.Node.Parent.Text == "Вход админа")
+            {
+                AdminUsersUserControl admin_usersUC = new AdminUsersUserControl();
+                ViewPanel.Controls.Clear();
+                ViewPanel.Controls.Add(admin_usersUC);
+                admin_usersUC.Dock = DockStyle.None;
+            }
         }
 
         private void AdminPanelButton_Click(object sender, EventArgs e)
@@ -151,6 +167,22 @@ namespace Comp
             ViewPanel.Controls.Clear();
             ViewPanel.Controls.Add(adminUC);
             adminUC.Dock = DockStyle.None;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(isAdmin && treeView1.Nodes.Count == 1)
+            {
+                TreeNode node = new TreeNode("Вход админа");
+                treeView1.Nodes.Add(node);
+
+                TreeNode node1 = new TreeNode("Пользователи");
+                node.Nodes.Add(node1);
+            }
+            else if(!isAdmin && treeView1.Nodes.Count > 1)
+            {
+                treeView1.Nodes.RemoveAt(1);
+            }
         }
     }
 }

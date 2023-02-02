@@ -48,14 +48,14 @@ namespace Comp
 
                 Label lbl = new Label();
                 lbl.Location = new Point(x, 140);
-                lbl.Size = new Size(200, 30);
+                lbl.Size = new Size(230, 30);
                 lbl.Font = new Font("Microsoft Sans Serif", 12);
                 lbl.Text = lev1[i + 2];
                 lbl.Tag = lev1[i];
                 lbl.Click += new EventHandler(label_Click);
                 Level1Panel.Controls.Add(lbl);
 
-                x += 210;
+                x += 240;
             }
         }
         private void Level1_Load(object sender, EventArgs e)

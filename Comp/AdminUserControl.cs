@@ -29,5 +29,20 @@ namespace Comp
             Controls.Add(adminusersUC);
             adminusersUC.Dock = DockStyle.None;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Управление таблицей готовых комплектов
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Управление таблицей Level1
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Управление таблицей Level2
+        }
     }
 }
