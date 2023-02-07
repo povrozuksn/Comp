@@ -42,7 +42,10 @@ namespace Comp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Управление таблицей Level2
+            RedLeve2UserControl redlevel2UC = new RedLeve2UserControl();
+            Controls.Clear();
+            Controls.Add(redlevel2UC);
+            redlevel2UC.Dock = DockStyle.Fill;
         }
     }
 }

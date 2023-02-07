@@ -159,6 +159,13 @@ namespace Comp
                 ViewPanel.Controls.Add(admin_usersUC);
                 admin_usersUC.Dock = DockStyle.None;
             }
+            else if (e.Node.Level == 1 && e.Node.Parent.Text == "Вход админа")
+            {
+                RedLeve2UserControl red_level2UC = new RedLeve2UserControl();
+                ViewPanel.Controls.Clear();
+                ViewPanel.Controls.Add(red_level2UC);
+                red_level2UC.Dock = DockStyle.None;
+            }
         }
 
         private void AdminPanelButton_Click(object sender, EventArgs e)
@@ -178,6 +185,9 @@ namespace Comp
 
                 TreeNode node1 = new TreeNode("Пользователи");
                 node.Nodes.Add(node1);
+
+                TreeNode node2 = new TreeNode("Редактирование");
+                node.Nodes.Add(node2);
             }
             else if(!isAdmin && treeView1.Nodes.Count > 1)
             {
