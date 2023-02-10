@@ -17,7 +17,7 @@ namespace Comp
         {
             InitializeComponent();
 
-            List<string> lev2 = SQLClass.Select("SELECT ID, id_main, id_level1, Name, Image, Specs, Quantity, Price FROM level2 WHERE id_level1 = '" + id_level1 + "'");
+            List<string> lev2 = SQLClass.Select("SELECT ID, id_main, id_level1, Name, Image, Specs, Quantity, Price FROM level2 WHERE ID = '" + id_level1 + "'");
 
             try
             {

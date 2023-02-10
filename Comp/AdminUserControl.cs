@@ -32,12 +32,18 @@ namespace Comp
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //Управление таблицей готовых комплектов
+            RedLeve0UserControl redlevel0UC = new RedLeve0UserControl();
+            Controls.Clear();
+            Controls.Add(redlevel0UC);
+            redlevel0UC.Dock = DockStyle.None;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Управление таблицей Level1
+            RedLeve1UserControl redlevel1UC = new RedLeve1UserControl();
+            Controls.Clear();
+            Controls.Add(redlevel1UC);
+            redlevel1UC.Dock = DockStyle.None;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -45,7 +51,7 @@ namespace Comp
             RedLeve2UserControl redlevel2UC = new RedLeve2UserControl();
             Controls.Clear();
             Controls.Add(redlevel2UC);
-            redlevel2UC.Dock = DockStyle.Fill;
+            redlevel2UC.Dock = DockStyle.None;
         }
     }
 }

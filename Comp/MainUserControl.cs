@@ -53,7 +53,7 @@ namespace Comp
         private void pictureBox_Click(object sender, EventArgs e)
         {
             PictureBox pb = (PictureBox)sender;
-            Level1UserControl level1UC = new Level1UserControl(pb.Tag.ToString());
+            Level0UserControl level1UC = new Level0UserControl(pb.Tag.ToString());
             Controls.Clear();
             Controls.Add(level1UC);
             level1UC.Dock = DockStyle.None;
@@ -62,7 +62,7 @@ namespace Comp
         private void label_Click(object sender, EventArgs e)
         {
             Label lbl = (Label)sender;
-            Level1UserControl level1UC = new Level1UserControl(lbl.Tag.ToString());
+            Level0UserControl level1UC = new Level0UserControl(lbl.Tag.ToString());
             Controls.Clear();
             Controls.Add(level1UC);
             level1UC.Dock = DockStyle.None;

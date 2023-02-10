@@ -12,37 +12,37 @@ namespace Comp
 {
     public partial class Level1UserControl : UserControl
     {
-        public Level1UserControl(string id_main)
+        public Level1UserControl(string id_level1)
         {
             InitializeComponent();
 
-            List<string> comps = SQLClass.Select("SELECT Name, Image FROM main WHERE ID = '" + id_main + "'");
-            List<string> lev1 = SQLClass.Select("SELECT ID, id_main, Name, Image, Specs, Quantity, Price FROM level1 WHERE id_main = '" + id_main + "'");
+            List<string> lev1 = SQLClass.Select("SELECT ID, Name, Image FROM level1 WHERE ID = '" + id_level1 + "'");
+            List<string> lev2 = SQLClass.Select("SELECT ID, Name, Image, Specs, Quantity, Price FROM level2 WHERE id_level1 = '" + id_level1 + "'");
 
-            Text = comps[0];
-            label1.Text = comps[0];
+            Text = lev1[1];
+            label1.Text = lev1[1];
             try
             {
-                pictureBox1.Load("../../Pictures/" + comps[1]);
+                pictureBox1.Load("../../Pictures/" + lev1[2]);
             }
             catch (Exception) { };
 
             Level1Panel.Controls.Clear();
 
             int x = 40;
-            for (int i = 0; i < lev1.Count; i += 7)
+            for (int i = 0; i < lev2.Count; i += 6)
             {
                 PictureBox pb = new PictureBox();
                 pb = new PictureBox();
                 try
                 {
-                    pb.Load("../../Pictures/" + lev1[i + 3]);
+                    pb.Load("../../Pictures/" + lev2[i + 2]);
                 }
                 catch (Exception) { }
                 pb.Location = new Point(x, 30);
                 pb.Size = new Size(100, 100);
                 pb.SizeMode = PictureBoxSizeMode.Zoom;
-                pb.Tag = lev1[i];
+                pb.Tag = lev2[i];
                 pb.Click += new EventHandler(pictureBox_Click);
                 Level1Panel.Controls.Add(pb);
 
@@ -50,8 +50,8 @@ namespace Comp
                 lbl.Location = new Point(x, 140);
                 lbl.Size = new Size(230, 30);
                 lbl.Font = new Font("Microsoft Sans Serif", 12);
-                lbl.Text = lev1[i + 2];
-                lbl.Tag = lev1[i];
+                lbl.Text = lev2[i + 1];
+                lbl.Tag = lev2[i];
                 lbl.Click += new EventHandler(label_Click);
                 Level1Panel.Controls.Add(lbl);
 

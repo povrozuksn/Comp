@@ -52,6 +52,7 @@ namespace Comp
                     for(int g=0; g<level2.Count; g+=2)
                     {
                         TreeNode node2 = new TreeNode(level2[g+1]);
+                        node2.Tag = level2[g];
                         node1.Nodes.Add(node2);
                     }
                 }
@@ -130,13 +131,21 @@ namespace Comp
 
             else if(e.Node.Level == 1 && e.Node.Parent.Text == "Комплекты")
             {
+                Level0UserControl level0UC = new Level0UserControl(e.Node.Tag.ToString());
+                ViewPanel.Controls.Clear();
+                ViewPanel.Controls.Add(level0UC);
+                level0UC.Dock = DockStyle.None;
+            }
+
+            else if (e.Node.Level == 2 && e.Node.Parent.Parent.Text == "Комплекты")
+            {
                 Level1UserControl level1UC = new Level1UserControl(e.Node.Tag.ToString());
                 ViewPanel.Controls.Clear();
                 ViewPanel.Controls.Add(level1UC);
                 level1UC.Dock = DockStyle.None;
             }
 
-            else if (e.Node.Level == 2 && e.Node.Parent.Parent.Text == "Комплекты")
+            else if (e.Node.Level == 3 && e.Node.Parent.Parent.Parent.Text == "Комплекты")
             {
                 Level2UserControl level2UC = new Level2UserControl(e.Node.Tag.ToString());
                 ViewPanel.Controls.Clear();
@@ -152,14 +161,32 @@ namespace Comp
                 adminUC.Dock = DockStyle.None;
             }
 
-            else if (e.Node.Level == 1 && e.Node.Parent.Text == "Вход админа")
+            else if (e.Node.Level == 1 && e.Node.Parent.Text == "Вход админа" && e.Node.Text == "Управление пользователями")
             {
                 AdminUsersUserControl admin_usersUC = new AdminUsersUserControl();
                 ViewPanel.Controls.Clear();
                 ViewPanel.Controls.Add(admin_usersUC);
                 admin_usersUC.Dock = DockStyle.None;
             }
-            else if (e.Node.Level == 1 && e.Node.Parent.Text == "Вход админа")
+
+            else if (e.Node.Level == 1 && e.Node.Parent.Text == "Вход админа" && e.Node.Text == "Управление комплектами")
+            {
+                RedLeve0UserControl red_level0UC = new RedLeve0UserControl();
+                ViewPanel.Controls.Clear();
+                ViewPanel.Controls.Add(red_level0UC);
+                red_level0UC.Dock = DockStyle.None;
+            }
+
+
+            else if (e.Node.Level == 1 && e.Node.Parent.Text == "Вход админа" && e.Node.Text == "Управление подкатегориями")
+            {
+                RedLeve1UserControl red_level1UC = new RedLeve1UserControl();
+                ViewPanel.Controls.Clear();
+                ViewPanel.Controls.Add(red_level1UC);
+                red_level1UC.Dock = DockStyle.None;
+            }
+
+            else if (e.Node.Level == 1 && e.Node.Parent.Text == "Вход админа" && e.Node.Text == "Управление компонентами")
             {
                 RedLeve2UserControl red_level2UC = new RedLeve2UserControl();
                 ViewPanel.Controls.Clear();
@@ -183,11 +210,17 @@ namespace Comp
                 TreeNode node = new TreeNode("Вход админа");
                 treeView1.Nodes.Add(node);
 
-                TreeNode node1 = new TreeNode("Пользователи");
+                TreeNode node1 = new TreeNode("Управление пользователями");
                 node.Nodes.Add(node1);
 
-                TreeNode node2 = new TreeNode("Редактирование");
+                TreeNode node2 = new TreeNode("Управление комплектами");
                 node.Nodes.Add(node2);
+
+                TreeNode node3 = new TreeNode("Управление подкатегориями");
+                node.Nodes.Add(node3);
+
+                TreeNode node4 = new TreeNode("Управление компонентами");
+                node.Nodes.Add(node4);
             }
             else if(!isAdmin && treeView1.Nodes.Count > 1)
             {

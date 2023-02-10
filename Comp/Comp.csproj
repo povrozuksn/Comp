@@ -68,6 +68,12 @@
     <Compile Include="AdminUsersUserControl.Designer.cs">
       <DependentUpon>AdminUsersUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Level0UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Level0UserControl.Designer.cs">
+      <DependentUpon>Level0UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Level1UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,6 +100,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedLeve0UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RedLeve0UserControl.Designer.cs">
+      <DependentUpon>RedLeve0UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RedLeve1UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RedLeve1UserControl.Designer.cs">
+      <DependentUpon>RedLeve1UserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="RedLeve2UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +134,9 @@
     <EmbeddedResource Include="AdminUsersUserControl.resx">
       <DependentUpon>AdminUsersUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Level0UserControl.resx">
+      <DependentUpon>Level0UserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Level1UserControl.resx">
       <DependentUpon>Level1UserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +158,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RedLeve0UserControl.resx">
+      <DependentUpon>RedLeve0UserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RedLeve1UserControl.resx">
+      <DependentUpon>RedLeve1UserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RedLeve2UserControl.resx">
       <DependentUpon>RedLeve2UserControl.cs</DependentUpon>
     </EmbeddedResource>
