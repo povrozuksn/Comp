@@ -57,6 +57,8 @@ namespace Comp
 
                 x += 240;
             }
+
+            DesignUserControl.ApplyDesign(this);
         }
         private void Level1_Load(object sender, EventArgs e)
         {
@@ -84,6 +86,11 @@ namespace Comp
         private void Level0Panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Level0UserControl_Load(object sender, EventArgs e)
+        {
+            DesignUserControl.ApplyDesign(this);
         }
     }
 }

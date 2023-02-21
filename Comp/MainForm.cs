@@ -25,6 +25,8 @@ namespace Comp
             mainUC.Dock = DockStyle.Fill;
             ViewPanel.Controls.Clear();
             ViewPanel.Controls.Add(mainUC);
+
+            DesignUserControl.ApplyDesign(this);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -57,6 +59,8 @@ namespace Comp
                     }
                 }
             }
+
+            DesignUserControl.ApplyDesign(this);
         }
 
         private void AuthButton_Click(object sender, EventArgs e)
@@ -73,6 +77,7 @@ namespace Comp
                 AuthPanel.Controls.Add(AuthButton);
                 AdminPanelButton.Visible = false;
                 AccountButton.Visible = false;
+                DesignButton.Visible = false;
                 AuthPanel.Controls.Add(label4);
                 LoginTextBox.Text = "";
                 AuthPanel.Controls.Add(label5);
@@ -97,7 +102,9 @@ namespace Comp
                     AdminPanelButton.Visible = isAdmin;
                     AuthPanel.Controls.Add(AccountButton);
                     AccountButton.Visible = true;
+                    DesignButton.Visible = true;
                     AuthPanel.Controls.Add(AdminPanelButton);
+                    AuthPanel.Controls.Add(DesignButton);
                     AuthPanel.Controls.Add(HelloLabel);
                     HelloLabel.Text = "Приветствуем, " + NameSurname;
                 }
@@ -226,6 +233,16 @@ namespace Comp
             {
                 treeView1.Nodes.RemoveAt(1);
             }
+        }
+
+        private void DesignButton_Click(object sender, EventArgs e)
+        {
+            DesignUserControl desUC = new DesignUserControl();
+            ViewPanel.Controls.Clear();
+            ViewPanel.Controls.Add(desUC);
+            desUC.Dock = DockStyle.None;
+
+            DesignUserControl.ApplyDesign(this);
         }
     }
 }

@@ -38,6 +38,7 @@
             // 
             // Level1Panel
             // 
+            this.Level1Panel.AutoScroll = true;
             this.Level1Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Level1Panel.Location = new System.Drawing.Point(0, 215);
             this.Level1Panel.Name = "Level1Panel";
@@ -84,6 +85,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Level1UserControl";
             this.Size = new System.Drawing.Size(1000, 600);
+            this.Load += new System.EventHandler(this.Level1UserControl_Load);
             this.Level0Panel.ResumeLayout(false);
             this.Level0Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

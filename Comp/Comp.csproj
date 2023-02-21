@@ -68,6 +68,12 @@
     <Compile Include="AdminUsersUserControl.Designer.cs">
       <DependentUpon>AdminUsersUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="DesignUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DesignUserControl.Designer.cs">
+      <DependentUpon>DesignUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Level0UserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminUsersUserControl.resx">
       <DependentUpon>AdminUsersUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignUserControl.resx">
+      <DependentUpon>DesignUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Level0UserControl.resx">
       <DependentUpon>Level0UserControl.cs</DependentUpon>

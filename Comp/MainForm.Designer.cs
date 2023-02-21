@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Комплекты");
             this.AuthPanel = new System.Windows.Forms.Panel();
+            this.DesignButton = new System.Windows.Forms.Button();
             this.HelloLabel = new System.Windows.Forms.Label();
             this.AccountButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             // 
             // AuthPanel
             // 
+            this.AuthPanel.Controls.Add(this.DesignButton);
             this.AuthPanel.Controls.Add(this.HelloLabel);
             this.AuthPanel.Controls.Add(this.AccountButton);
             this.AuthPanel.Controls.Add(this.label5);
@@ -58,10 +60,22 @@
             this.AuthPanel.Controls.Add(this.label4);
             this.AuthPanel.Controls.Add(this.AdminPanelButton);
             this.AuthPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AuthPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AuthPanel.Location = new System.Drawing.Point(0, 0);
             this.AuthPanel.Name = "AuthPanel";
             this.AuthPanel.Size = new System.Drawing.Size(1924, 68);
             this.AuthPanel.TabIndex = 0;
+            // 
+            // DesignButton
+            // 
+            this.DesignButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DesignButton.Location = new System.Drawing.Point(1487, 17);
+            this.DesignButton.Name = "DesignButton";
+            this.DesignButton.Size = new System.Drawing.Size(155, 33);
+            this.DesignButton.TabIndex = 23;
+            this.DesignButton.Text = "Дизайн";
+            this.DesignButton.UseVisualStyleBackColor = true;
+            this.DesignButton.Click += new System.EventHandler(this.DesignButton_Click);
             // 
             // HelloLabel
             // 
@@ -147,9 +161,9 @@
             // ViewPanel
             // 
             this.ViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ViewPanel.Location = new System.Drawing.Point(459, 3);
+            this.ViewPanel.Location = new System.Drawing.Point(458, 3);
             this.ViewPanel.Name = "ViewPanel";
-            this.ViewPanel.Size = new System.Drawing.Size(1462, 605);
+            this.ViewPanel.Size = new System.Drawing.Size(1463, 605);
             this.ViewPanel.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -177,7 +191,7 @@
             treeNode1.Text = "Комплекты";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1});
-            this.treeView1.Size = new System.Drawing.Size(450, 605);
+            this.treeView1.Size = new System.Drawing.Size(449, 605);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -218,6 +232,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button DesignButton;
     }
 }
 

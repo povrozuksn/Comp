@@ -23,7 +23,7 @@ namespace Comp
             {
                 comboBox1.Items.Add(main_list[i] + "," + main_list[i + 1]);
             }
-
+            DesignUserControl.ApplyDesign(this);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -72,6 +72,7 @@ namespace Comp
 
                 y += 35;
             }
+            DesignUserControl.ApplyDesign(this);
         }
 
 

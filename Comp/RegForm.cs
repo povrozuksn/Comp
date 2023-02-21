@@ -20,6 +20,7 @@ namespace Comp
             CityComboBox.Items.Add("");
             foreach (string city in cities)
                 CityComboBox.Items.Add(city);
+            DesignUserControl.ApplyDesign(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,6 +30,11 @@ namespace Comp
 
             MessageBox.Show("Сохранено");
             Close();
+        }
+
+        private void RegForm_Load(object sender, EventArgs e)
+        {
+            DesignUserControl.ApplyDesign(this);
         }
     }
 }

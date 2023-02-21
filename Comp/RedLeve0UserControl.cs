@@ -16,6 +16,7 @@ namespace Comp
         public RedLeve0UserControl()
         {
             InitializeComponent();
+            DesignUserControl.ApplyDesign(this);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,6 +53,7 @@ namespace Comp
 
                 y += 35;
             }
+            DesignUserControl.ApplyDesign(this);
         }
 
 

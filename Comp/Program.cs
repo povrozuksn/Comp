@@ -20,6 +20,7 @@ namespace Comp
             Application.SetCompatibleTextRenderingDefault(false);
             SQLClass.CONN = new MySqlConnection(SQLClass.CONNECTION_STRING);
             SQLClass.CONN.Open();
+            DesignUserControl.ReadDefaultDesign();
 
             Application.Run(new MainForm());
 

@@ -21,6 +21,7 @@ namespace Comp
             CityComboBox.Items.Add("");
             foreach (string city in cities)
                 CityComboBox.Items.Add(city);
+            DesignUserControl.ApplyDesign(this);
         }
 
         private void AdminUsersForm_Load(object sender, EventArgs e)
@@ -72,6 +73,11 @@ namespace Comp
 
                 y += 35;
             }
+        }
+
+        private void AdminUsersUserControl_Load(object sender, EventArgs e)
+        {
+            DesignUserControl.ApplyDesign(this);
         }
     }
 }

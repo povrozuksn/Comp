@@ -31,6 +31,8 @@ namespace Comp
             LoginTextBox.Text = user_date[4];
             PasTextBox.Text = user_date[5];
             EmailTextBox.Text = user_date[6];
+
+            DesignUserControl.ApplyDesign(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +42,11 @@ namespace Comp
             MainForm.Login = LoginTextBox.Text;
             MessageBox.Show("Сохранено");
             Close();
+        }
+
+        private void AccountForm_Load(object sender, EventArgs e)
+        {
+            DesignUserControl.ApplyDesign(this);
         }
     }
 }

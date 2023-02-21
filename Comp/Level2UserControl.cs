@@ -26,9 +26,18 @@ namespace Comp
                 pictureBox1.Load("../../Pictures/" + lev2[4]);
             }
             catch (Exception) { };
+
+            DesignUserControl.ApplyDesign(this);
         }
 
+
+
         private void Level2UserControl_Load(object sender, EventArgs e)
+        {
+            DesignUserControl.ApplyDesign(this);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

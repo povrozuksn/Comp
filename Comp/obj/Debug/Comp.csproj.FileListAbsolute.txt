@@ -21,7 +21,6 @@ C:\Users\root\Source\Repos\Comp1\Comp\bin\Debug\Comp.exe
 C:\Users\root\Source\Repos\Comp1\Comp\bin\Debug\Comp.pdb
 C:\Users\root\Source\Repos\Comp1\Comp\bin\Debug\MySql.Data.dll
 C:\Users\root\Source\Repos\Comp1\Comp\obj\Debug\Comp.csproj.AssemblyReference.cache
-C:\Users\root\Source\Repos\Comp1\Comp\obj\Debug\Comp.csproj.SuggestedBindingRedirects.cache
 C:\Users\root\Source\Repos\Comp1\Comp\obj\Debug\Comp.AccountForm.resources
 C:\Users\root\Source\Repos\Comp1\Comp\obj\Debug\Comp.Level1UserControl.resources
 C:\Users\root\Source\Repos\Comp1\Comp\obj\Debug\Comp.MainForm.resources
@@ -40,3 +39,5 @@ C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.RedLeve2UserControl.resourc
 C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.RedLeve1UserControl.resources
 C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.RedLeve0UserControl.resources
 C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.Level0UserControl.resources
+C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.DesignUserControl.resources
+C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.csproj.SuggestedBindingRedirects.cache
