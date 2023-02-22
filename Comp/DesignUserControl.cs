@@ -39,10 +39,55 @@ namespace Comp
 
         public static void ReadDefaultDesign()
         {
+            ///Чтение цвета кнопки
             try
             {
                 string color = SQLClass.Select("SELECT value FROM defaultDesign WHERE type = 'System.Windows.Forms.Button' AND parameter = 'COLOR'")[0];
                 BUTTON_COLOR = Color.FromArgb(Convert.ToInt32(color));
+            }
+            catch (Exception) { }
+
+            ///Чтение типа и цвета шрифта кнопки
+            try
+            {
+                string color = SQLClass.Select("SELECT value FROM defaultDesign WHERE type = 'System.Windows.Forms.Button' AND parameter = 'FONT_COLOR'")[0];
+                BUTTON_FONT_COLOR = Color.FromArgb(Convert.ToInt32(color));
+
+                string font = SQLClass.Select("SELECT value FROM defaultDesign WHERE type = 'System.Windows.Forms.Button' AND parameter = 'FONT'")[0];
+                string[] parts = font.Split(new char[] {';'});
+                BUTTON_FONT = new Font(new FontFamily(parts[0]), (float)Convert.ToDouble(parts[1]));
+            }
+            catch (Exception) { }
+
+            ///Чтение типа и цвета шрифта текстбоксов
+            try
+            {
+                string color = SQLClass.Select("SELECT value FROM defaultDesign WHERE type = 'System.Windows.Forms.textBox' AND parameter = 'FONT_COLOR'")[0];
+                TEXTBOX_FONT_COLOR = Color.FromArgb(Convert.ToInt32(color));
+
+                string font = SQLClass.Select("SELECT value FROM defaultDesign WHERE type = 'System.Windows.Forms.textBox' AND parameter = 'FONT'")[0];
+                string[] parts = font.Split(new char[] { ';' });
+                TEXTBOX_FONT = new Font(new FontFamily(parts[0]), (float)Convert.ToDouble(parts[1]));
+            }
+            catch (Exception) { }
+
+            ///Чтение типа и цвета шрифта лейблов
+            try
+            {
+                string color = SQLClass.Select("SELECT value FROM defaultDesign WHERE type = 'System.Windows.Forms.label' AND parameter = 'FONT_COLOR'")[0];
+                LABEL_FONT_COLOR = Color.FromArgb(Convert.ToInt32(color));
+
+                string font = SQLClass.Select("SELECT value FROM defaultDesign WHERE type = 'System.Windows.Forms.label' AND parameter = 'FONT'")[0];
+                string[] parts = font.Split(new char[] { ';' });
+                LABEL_FONT = new Font(new FontFamily(parts[0]), (float)Convert.ToDouble(parts[1]));
+            }
+            catch (Exception) { }
+
+            ///Чтение цвета панели
+            try
+            {
+                string color = SQLClass.Select("SELECT value FROM defaultDesign WHERE type = 'System.Windows.Forms.panel' AND parameter = 'COLOR'")[0];
+                PANEL_COLOR = Color.FromArgb(Convert.ToInt32(color));
             }
             catch (Exception) { }
         }
@@ -107,6 +152,13 @@ namespace Comp
                 TEXTBOX_FONT_COLOR = fontDialog1.Color;
 
                 DesignUserControl_Load(null, null);
+
+                SQLClass.Update("DELETE FROM defaultDesign WHERE type = '" + textBox1.GetType() + "' AND parameter = 'FONT'");
+                SQLClass.Update("DELETE FROM defaultDesign WHERE type = '" + textBox1.GetType() + "' AND parameter = 'FONT_COLOR'");
+
+                SQLClass.Update("INSERT INTO defaultDesign (type, parameter, value) VALUES ('" + textBox1.GetType() + "', 'FONT', '" + TEXTBOX_FONT.Name + ";" + TEXTBOX_FONT.Size.ToString() + "')");
+                SQLClass.Update("INSERT INTO defaultDesign (type, parameter, value) VALUES ('" + textBox1.GetType() + "', 'FONT_COLOR', '" + TEXTBOX_FONT_COLOR.ToArgb() + "')");
+
             }
         }
 
@@ -124,6 +176,12 @@ namespace Comp
                 BUTTON_FONT_COLOR = fontDialog1.Color;
 
                 DesignUserControl_Load(null, null);
+
+                SQLClass.Update("DELETE FROM defaultDesign WHERE type = '" + button3.GetType() + "' AND parameter = 'FONT'");
+                SQLClass.Update("DELETE FROM defaultDesign WHERE type = '" + button3.GetType() + "' AND parameter = 'FONT_COLOR'");
+
+                SQLClass.Update("INSERT INTO defaultDesign (type, parameter, value) VALUES ('" + button3.GetType() + "', 'FONT', '" + BUTTON_FONT.Name + ";" + BUTTON_FONT.Size.ToString() + "')");
+                SQLClass.Update("INSERT INTO defaultDesign (type, parameter, value) VALUES ('" + button3.GetType() + "', 'FONT_COLOR', '" + BUTTON_FONT_COLOR.ToArgb() + "')");
             }
         }
 
@@ -160,6 +218,12 @@ namespace Comp
                 LABEL_FONT_COLOR = fontDialog1.Color;
 
                 DesignUserControl_Load(null, null);
+
+                SQLClass.Update("DELETE FROM defaultDesign WHERE type = '" + label3.GetType() + "' AND parameter = 'FONT'");
+                SQLClass.Update("DELETE FROM defaultDesign WHERE type = '" + label3.GetType() + "' AND parameter = 'FONT_COLOR'");
+
+                SQLClass.Update("INSERT INTO defaultDesign (type, parameter, value) VALUES ('" + label3.GetType() + "', 'FONT', '" + LABEL_FONT.Name + ";" + LABEL_FONT.Size.ToString() + "')");
+                SQLClass.Update("INSERT INTO defaultDesign (type, parameter, value) VALUES ('" + label3.GetType() + "', 'FONT_COLOR', '" + LABEL_FONT_COLOR.ToArgb() + "')");
             }
         }
 
@@ -175,6 +239,11 @@ namespace Comp
                 PANEL_COLOR = colorDialog1.Color;
 
                 DesignUserControl_Load(null, null);
+
+                SQLClass.Update("DELETE FROM defaultDesign WHERE type = '" + panel1.GetType() + "' AND parameter = 'COLOR'");
+
+                SQLClass.Update("INSERT INTO defaultDesign (type, parameter, value) VALUES ('" + panel1.GetType() + "', 'COLOR', '" + PANEL_COLOR.ToArgb() + "')");
+
             }
         }
 
