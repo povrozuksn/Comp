@@ -12,6 +12,9 @@ namespace Comp
 {
     public partial class DesignUserControl : UserControl
     {
+
+        public static ContextMenuStrip BUTTON_CM;
+
         #region textbox
         public static Font TEXTBOX_FONT;
         public static Color TEXTBOX_FONT_COLOR;
@@ -91,6 +94,22 @@ namespace Comp
             }
             catch (Exception) { }
         }
+
+        public static void ApplyMenu(Control Form)
+        {
+            foreach (Control ctrl in Form.Controls)
+            {              
+                if (ctrl is Button && MainForm.isAdmin)
+                {
+                    ctrl.ContextMenuStrip = BUTTON_CM;                    
+                }
+                else
+                {
+                    ApplyMenu(ctrl);
+                }                
+            }
+        }
+
 
         public static void ApplyDesign(Control Form)
         {

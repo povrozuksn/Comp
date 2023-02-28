@@ -21,6 +21,7 @@ namespace Comp
             foreach (string city in cities)
                 CityComboBox.Items.Add(city);
             DesignUserControl.ApplyDesign(this);
+            DesignUserControl.ApplyMenu(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +36,7 @@ namespace Comp
         private void RegForm_Load(object sender, EventArgs e)
         {
             DesignUserControl.ApplyDesign(this);
+            DesignUserControl.ApplyMenu(this);
         }
     }
 }

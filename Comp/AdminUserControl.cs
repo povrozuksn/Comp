@@ -16,11 +16,13 @@ namespace Comp
         {
             InitializeComponent();
             DesignUserControl.ApplyDesign(this);
+            DesignUserControl.ApplyMenu(this);
         }
 
         private void AdminUserControl_Load(object sender, EventArgs e)
         {
             DesignUserControl.ApplyDesign(this);
+            DesignUserControl.ApplyMenu(this);
         }
 
         private void button3_Click(object sender, EventArgs e)

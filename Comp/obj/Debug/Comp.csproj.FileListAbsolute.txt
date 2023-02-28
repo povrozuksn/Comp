@@ -41,3 +41,4 @@ C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.RedLeve0UserControl.resourc
 C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.Level0UserControl.resources
 C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.DesignUserControl.resources
 C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.csproj.SuggestedBindingRedirects.cache
+C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.UniqueDesignForm.resources

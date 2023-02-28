@@ -17,6 +17,7 @@ namespace Comp
         {
             InitializeComponent();
             DesignUserControl.ApplyDesign(this);
+            DesignUserControl.ApplyMenu(this);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,6 +55,7 @@ namespace Comp
                 y += 35;
             }
             DesignUserControl.ApplyDesign(this);
+            DesignUserControl.ApplyMenu(this);
         }
 
 

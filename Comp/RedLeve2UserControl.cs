@@ -24,6 +24,7 @@ namespace Comp
                 comboBox1.Items.Add(level1_list[i] + "," + level1_list[i+1] + "," + level1_list[i + 2]);
             }
             DesignUserControl.ApplyDesign(this);
+            DesignUserControl.ApplyMenu(this);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -79,6 +80,7 @@ namespace Comp
                 y += 35;
             }
             DesignUserControl.ApplyDesign(this);
+            DesignUserControl.ApplyMenu(this);
         }
 
 

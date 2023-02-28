@@ -27,12 +27,15 @@ namespace Comp
             ViewPanel.Controls.Add(mainUC);
 
             DesignUserControl.ApplyDesign(this);
+            DesignUserControl.ApplyMenu(this);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             string id_main;
             string id_level1;
+
+            DesignUserControl.BUTTON_CM = contextMenuStrip1;
 
             List<string> comps = SQLClass.Select("SELECT ID, Name FROM main");
             for(int i=0; i < comps.Count; i+=2)
@@ -61,6 +64,7 @@ namespace Comp
             }
 
             DesignUserControl.ApplyDesign(this);
+            DesignUserControl.ApplyMenu(this);
         }
 
         private void AuthButton_Click(object sender, EventArgs e)
@@ -88,6 +92,7 @@ namespace Comp
                 mainUC.Dock = DockStyle.Fill;
                 ViewPanel.Controls.Clear();
                 ViewPanel.Controls.Add(mainUC);
+                DesignUserControl.ApplyMenu(this);
             }
             else
             {
@@ -107,6 +112,7 @@ namespace Comp
                     AuthPanel.Controls.Add(DesignButton);
                     AuthPanel.Controls.Add(HelloLabel);
                     HelloLabel.Text = "Приветствуем, " + NameSurname;
+                    DesignUserControl.ApplyMenu(this);
                 }
                 else
                 {
@@ -243,6 +249,19 @@ namespace Comp
             desUC.Dock = DockStyle.None;
 
             DesignUserControl.ApplyDesign(this);
+        }
+
+        private void уникальныйДизайнКнопкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                ContextMenuStrip cm = (ContextMenuStrip)(item.GetCurrentParent());
+                Button button = (Button)(cm.SourceControl);
+                UniqueDesignForm designForm = new UniqueDesignForm(button);
+                designForm.ShowDialog();
+            }
+            catch (Exception) { }
         }
     }
 }
