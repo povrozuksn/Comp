@@ -95,6 +95,30 @@ namespace Comp
             catch (Exception) { }
         }
 
+        public static void ReadUniqueButtonDesign(Button btn)
+        {
+            ///Чтение цвета кнопки
+            try
+            {
+                string color = SQLClass.Select("SELECT value FROM uniqueDesign WHERE type = 'System.Windows.Forms.Button' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'COLOR'")[0];
+                btn.BackColor = Color.FromArgb(Convert.ToInt32(color));
+            }
+            catch (Exception) { }
+
+            ///Чтение типа и цвета шрифта кнопки
+            try
+            {
+                string color = SQLClass.Select("SELECT value FROM uniqueDesign WHERE type = 'System.Windows.Forms.Button' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'FONT_COLOR'")[0];
+                btn.ForeColor = Color.FromArgb(Convert.ToInt32(color));
+
+                string font = SQLClass.Select("SELECT value FROM uniqueDesign WHERE type = 'System.Windows.Forms.Button' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'FONT'")[0];
+                string[] parts = font.Split(new char[] { ';' });
+                btn.Font = new Font(new FontFamily(parts[0]), (float)Convert.ToDouble(parts[1]));
+            }
+            catch (Exception) { }
+
+        }
+
         public static void ApplyMenu(Control Form)
         {
             foreach (Control ctrl in Form.Controls)
@@ -130,6 +154,7 @@ namespace Comp
                     ctrl.Font = BUTTON_FONT;
                     ctrl.ForeColor = BUTTON_FONT_COLOR;
                     ctrl.BackColor = BUTTON_COLOR;
+                    ReadUniqueButtonDesign(ctrl as Button);
                 }
                 else
                 {

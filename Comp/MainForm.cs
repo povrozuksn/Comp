@@ -248,7 +248,7 @@ namespace Comp
             ViewPanel.Controls.Add(desUC);
             desUC.Dock = DockStyle.None;
 
-            DesignUserControl.ApplyDesign(this);
+            //DesignUserControl.ApplyDesign(this);
         }
 
         private void уникальныйДизайнКнопкиToolStripMenuItem_Click(object sender, EventArgs e)
