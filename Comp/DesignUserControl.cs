@@ -97,7 +97,7 @@ namespace Comp
 
         public static void ReadUniqueButtonDesign(Button btn)
         {
-            ///Чтение цвета кнопки
+            //Чтение цвета кнопки
             try
             {
                 string color = SQLClass.Select("SELECT value FROM uniqueDesign WHERE type = 'System.Windows.Forms.Button' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'COLOR'")[0];
@@ -105,7 +105,7 @@ namespace Comp
             }
             catch (Exception) { }
 
-            ///Чтение типа и цвета шрифта кнопки
+            //Чтение типа и цвета шрифта кнопки
             try
             {
                 string color = SQLClass.Select("SELECT value FROM uniqueDesign WHERE type = 'System.Windows.Forms.Button' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'FONT_COLOR'")[0];
@@ -117,6 +117,23 @@ namespace Comp
             }
             catch (Exception) { }
 
+            //Чтение координат положения
+            try
+            {
+                string location = SQLClass.Select("SELECT value FROM uniqueDesign WHERE type = 'System.Windows.Forms.Button' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'LOCATION'")[0];
+                string[] parts = location.Split(new char[] { ',' });
+                btn.Location = new Point(Convert.ToInt32(parts[0]), Convert.ToInt32(parts[1]));
+            }
+            catch (Exception) { }
+
+            //Чтение размера
+            try
+            {
+                string size = SQLClass.Select("SELECT value FROM uniqueDesign WHERE type = 'System.Windows.Forms.Button' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'SIZE'")[0];
+                string[] parts = size.Split(new char[] { ',' });
+                btn.Size = new Size(Convert.ToInt32(parts[0]), Convert.ToInt32(parts[1]));
+            }
+            catch (Exception) { }
         }
 
         public static void ApplyMenu(Control Form)

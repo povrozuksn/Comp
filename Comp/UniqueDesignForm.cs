@@ -24,7 +24,10 @@ namespace Comp
             button3.Font = btn.Font;
             button3.ForeColor = btn.ForeColor;
             button3.BackColor = btn.BackColor;
+            button3.Size = btn.Size;
 
+            ButtonCoordsTextBox.Text = btn.Location.X.ToString() + ", " + btn.Location.Y.ToString();
+            ButtonSizeTextBox.Text = btn.Size.Width.ToString() + ", " + btn.Size.Height.ToString();
         }
 
         private void UniqueDesignForm_Load(object sender, EventArgs e)
@@ -74,5 +77,13 @@ namespace Comp
             }
         }
 
+        private void SaveCoordButton_Click(object sender, EventArgs e)
+        {
+            SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'LOCATION'");
+            SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'SIZE'");
+
+            SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'LOCATION' , '" + ButtonCoordsTextBox.Text + "')");
+            SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'SIZE' , '" + ButtonSizeTextBox.Text + "')");
+        }
     }
 }

@@ -114,7 +114,7 @@
             // AuthButton
             // 
             this.AuthButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AuthButton.Location = new System.Drawing.Point(837, 17);
+            this.AuthButton.Location = new System.Drawing.Point(834, 17);
             this.AuthButton.Name = "AuthButton";
             this.AuthButton.Size = new System.Drawing.Size(111, 32);
             this.AuthButton.TabIndex = 20;
@@ -209,7 +209,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.уникальныйДизайнКнопкиToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(274, 56);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(274, 28);
             // 
             // уникальныйДизайнКнопкиToolStripMenuItem
             // 

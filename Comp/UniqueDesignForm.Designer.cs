@@ -34,6 +34,11 @@
             this.ButtonFontButton = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ButtonCoordsTextBox = new System.Windows.Forms.TextBox();
+            this.ButtonSizeTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SaveCoordButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -47,7 +52,7 @@
             // 
             // ButtonColorButton
             // 
-            this.ButtonColorButton.Location = new System.Drawing.Point(32, 162);
+            this.ButtonColorButton.Location = new System.Drawing.Point(30, 143);
             this.ButtonColorButton.Name = "ButtonColorButton";
             this.ButtonColorButton.Size = new System.Drawing.Size(160, 50);
             this.ButtonColorButton.TabIndex = 10;
@@ -78,11 +83,58 @@
             // 
             this.fontDialog1.ShowColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(43, 205);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 25);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Координаты";
+            // 
+            // ButtonCoordsTextBox
+            // 
+            this.ButtonCoordsTextBox.Location = new System.Drawing.Point(199, 205);
+            this.ButtonCoordsTextBox.Name = "ButtonCoordsTextBox";
+            this.ButtonCoordsTextBox.Size = new System.Drawing.Size(189, 30);
+            this.ButtonCoordsTextBox.TabIndex = 13;
+            // 
+            // ButtonSizeTextBox
+            // 
+            this.ButtonSizeTextBox.Location = new System.Drawing.Point(199, 241);
+            this.ButtonSizeTextBox.Name = "ButtonSizeTextBox";
+            this.ButtonSizeTextBox.Size = new System.Drawing.Size(189, 30);
+            this.ButtonSizeTextBox.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 241);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 25);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Размер";
+            // 
+            // SaveCoordButton
+            // 
+            this.SaveCoordButton.Location = new System.Drawing.Point(79, 297);
+            this.SaveCoordButton.Name = "SaveCoordButton";
+            this.SaveCoordButton.Size = new System.Drawing.Size(347, 34);
+            this.SaveCoordButton.TabIndex = 16;
+            this.SaveCoordButton.Text = "Сохранить";
+            this.SaveCoordButton.UseVisualStyleBackColor = true;
+            this.SaveCoordButton.Click += new System.EventHandler(this.SaveCoordButton_Click);
+            // 
             // UniqueDesignForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 317);
+            this.ClientSize = new System.Drawing.Size(505, 361);
+            this.Controls.Add(this.SaveCoordButton);
+            this.Controls.Add(this.ButtonSizeTextBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.ButtonCoordsTextBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonColorButton);
             this.Controls.Add(this.button3);
@@ -105,5 +157,10 @@
         private System.Windows.Forms.Button ButtonFontButton;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox ButtonCoordsTextBox;
+        private System.Windows.Forms.TextBox ButtonSizeTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button SaveCoordButton;
     }
 }
