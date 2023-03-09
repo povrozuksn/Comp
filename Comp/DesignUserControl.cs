@@ -134,6 +134,14 @@ namespace Comp
                 btn.Size = new Size(Convert.ToInt32(parts[0]), Convert.ToInt32(parts[1]));
             }
             catch (Exception) { }
+
+            //Чтение доступности админу
+            try
+            {
+                string admin = SQLClass.Select("SELECT value FROM uniqueDesign WHERE type = 'System.Windows.Forms.Button' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'ADMIN'")[0];
+                btn.AccessibleDescription = admin; 
+            }
+            catch (Exception) { }
         }
 
         public static void ApplyMenu(Control Form)
@@ -172,6 +180,11 @@ namespace Comp
                     ctrl.ForeColor = BUTTON_FONT_COLOR;
                     ctrl.BackColor = BUTTON_COLOR;
                     ReadUniqueButtonDesign(ctrl as Button);
+
+                    if(!MainForm.isAdmin && ctrl.AccessibleDescription == "1")
+                    {
+                        ctrl.Visible = false;
+                    }
                 }
                 else
                 {

@@ -39,12 +39,13 @@
             this.ButtonSizeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SaveCoordButton = new System.Windows.Forms.Button();
+            this.ButtonCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(265, 34);
+            this.label1.Location = new System.Drawing.Point(281, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 25);
             this.label1.TabIndex = 11;
@@ -52,9 +53,9 @@
             // 
             // ButtonColorButton
             // 
-            this.ButtonColorButton.Location = new System.Drawing.Point(30, 143);
+            this.ButtonColorButton.Location = new System.Drawing.Point(46, 118);
             this.ButtonColorButton.Name = "ButtonColorButton";
-            this.ButtonColorButton.Size = new System.Drawing.Size(160, 50);
+            this.ButtonColorButton.Size = new System.Drawing.Size(163, 50);
             this.ButtonColorButton.TabIndex = 10;
             this.ButtonColorButton.Text = "Цвет";
             this.ButtonColorButton.UseVisualStyleBackColor = true;
@@ -62,7 +63,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(270, 81);
+            this.button3.Location = new System.Drawing.Point(286, 56);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(173, 55);
             this.button3.TabIndex = 9;
@@ -71,7 +72,7 @@
             // 
             // ButtonFontButton
             // 
-            this.ButtonFontButton.Location = new System.Drawing.Point(30, 81);
+            this.ButtonFontButton.Location = new System.Drawing.Point(46, 56);
             this.ButtonFontButton.Name = "ButtonFontButton";
             this.ButtonFontButton.Size = new System.Drawing.Size(163, 56);
             this.ButtonFontButton.TabIndex = 8;
@@ -86,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 205);
+            this.label2.Location = new System.Drawing.Point(59, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 25);
             this.label2.TabIndex = 12;
@@ -94,14 +95,14 @@
             // 
             // ButtonCoordsTextBox
             // 
-            this.ButtonCoordsTextBox.Location = new System.Drawing.Point(199, 205);
+            this.ButtonCoordsTextBox.Location = new System.Drawing.Point(215, 180);
             this.ButtonCoordsTextBox.Name = "ButtonCoordsTextBox";
             this.ButtonCoordsTextBox.Size = new System.Drawing.Size(189, 30);
             this.ButtonCoordsTextBox.TabIndex = 13;
             // 
             // ButtonSizeTextBox
             // 
-            this.ButtonSizeTextBox.Location = new System.Drawing.Point(199, 241);
+            this.ButtonSizeTextBox.Location = new System.Drawing.Point(215, 216);
             this.ButtonSizeTextBox.Name = "ButtonSizeTextBox";
             this.ButtonSizeTextBox.Size = new System.Drawing.Size(189, 30);
             this.ButtonSizeTextBox.TabIndex = 15;
@@ -109,7 +110,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 241);
+            this.label3.Location = new System.Drawing.Point(59, 216);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 25);
             this.label3.TabIndex = 14;
@@ -117,7 +118,7 @@
             // 
             // SaveCoordButton
             // 
-            this.SaveCoordButton.Location = new System.Drawing.Point(79, 297);
+            this.SaveCoordButton.Location = new System.Drawing.Point(75, 315);
             this.SaveCoordButton.Name = "SaveCoordButton";
             this.SaveCoordButton.Size = new System.Drawing.Size(347, 34);
             this.SaveCoordButton.TabIndex = 16;
@@ -125,11 +126,23 @@
             this.SaveCoordButton.UseVisualStyleBackColor = true;
             this.SaveCoordButton.Click += new System.EventHandler(this.SaveCoordButton_Click);
             // 
+            // ButtonCheckBox
+            // 
+            this.ButtonCheckBox.AutoSize = true;
+            this.ButtonCheckBox.Location = new System.Drawing.Point(64, 268);
+            this.ButtonCheckBox.Name = "ButtonCheckBox";
+            this.ButtonCheckBox.Size = new System.Drawing.Size(216, 29);
+            this.ButtonCheckBox.TabIndex = 17;
+            this.ButtonCheckBox.Text = "Только для админа";
+            this.ButtonCheckBox.UseVisualStyleBackColor = true;
+            this.ButtonCheckBox.CheckedChanged += new System.EventHandler(this.ButtonCheckBox_CheckedChanged);
+            // 
             // UniqueDesignForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 361);
+            this.Controls.Add(this.ButtonCheckBox);
             this.Controls.Add(this.SaveCoordButton);
             this.Controls.Add(this.ButtonSizeTextBox);
             this.Controls.Add(this.label3);
@@ -162,5 +175,6 @@
         private System.Windows.Forms.TextBox ButtonSizeTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button SaveCoordButton;
+        private System.Windows.Forms.CheckBox ButtonCheckBox;
     }
 }

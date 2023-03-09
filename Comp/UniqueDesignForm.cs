@@ -28,6 +28,7 @@ namespace Comp
 
             ButtonCoordsTextBox.Text = btn.Location.X.ToString() + ", " + btn.Location.Y.ToString();
             ButtonSizeTextBox.Text = btn.Size.Width.ToString() + ", " + btn.Size.Height.ToString();
+            ButtonCheckBox.Checked = Convert.ToBoolean(Convert.ToInt32(btn.AccessibleDescription));
         }
 
         private void UniqueDesignForm_Load(object sender, EventArgs e)
@@ -72,7 +73,6 @@ namespace Comp
                 UniqueDesignForm_Load(null, null);
 
                 SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'COLOR'");
-
                 SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'COLOR', '" + button3.BackColor.ToArgb() + "')");
             }
         }
@@ -84,6 +84,12 @@ namespace Comp
 
             SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'LOCATION' , '" + ButtonCoordsTextBox.Text + "')");
             SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'SIZE' , '" + ButtonSizeTextBox.Text + "')");
+        }
+
+        private void ButtonCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'ADMIN'");
+            SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'ADMIN' , '" + ((ButtonCheckBox.Checked) ? "1": "0") + "')");
         }
     }
 }

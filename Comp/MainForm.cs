@@ -91,7 +91,8 @@ namespace Comp
                 MainUserControl mainUC = new MainUserControl();
                 mainUC.Dock = DockStyle.Fill;
                 ViewPanel.Controls.Clear();
-                ViewPanel.Controls.Add(mainUC);
+                ViewPanel.Controls.Add(mainUC); 
+                DesignUserControl.ApplyDesign(this);
                 DesignUserControl.ApplyMenu(this);
             }
             else
@@ -112,6 +113,7 @@ namespace Comp
                     AuthPanel.Controls.Add(DesignButton);
                     AuthPanel.Controls.Add(HelloLabel);
                     HelloLabel.Text = "Приветствуем, " + NameSurname;
+                    DesignUserControl.ApplyDesign(this);
                     DesignUserControl.ApplyMenu(this);
                 }
                 else
