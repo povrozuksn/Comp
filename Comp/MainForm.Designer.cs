@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Комплекты");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Комплекты");
             this.AuthPanel = new System.Windows.Forms.Panel();
             this.DesignButton = new System.Windows.Forms.Button();
             this.HelloLabel = new System.Windows.Forms.Label();
@@ -46,9 +46,15 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.уникальныйДизайнКнопкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.уникальныйДизайнНадписиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BlockCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.BlocksDesignMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.AuthPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
+            this.BlockCMS.SuspendLayout();
             this.SuspendLayout();
             // 
             // AuthPanel
@@ -164,37 +170,38 @@
             // ViewPanel
             // 
             this.ViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ViewPanel.Location = new System.Drawing.Point(458, 3);
+            this.ViewPanel.Location = new System.Drawing.Point(303, 3);
             this.ViewPanel.Name = "ViewPanel";
-            this.ViewPanel.Size = new System.Drawing.Size(1463, 605);
+            this.ViewPanel.Size = new System.Drawing.Size(1618, 605);
             this.ViewPanel.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.70062F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.29938F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.ViewPanel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.treeView1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 68);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1924, 611);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // treeView1
             // 
+            this.treeView1.ContextMenuStrip = this.BlockCMS;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Узел0";
-            treeNode1.Text = "Комплекты";
+            treeNode2.Name = "Узел0";
+            treeNode2.Text = "Комплекты";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.treeView1.Size = new System.Drawing.Size(449, 605);
+            treeNode2});
+            this.treeView1.Size = new System.Drawing.Size(294, 605);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -218,6 +225,36 @@
             this.уникальныйДизайнКнопкиToolStripMenuItem.Text = "Уникальный дизайн кнопки";
             this.уникальныйДизайнКнопкиToolStripMenuItem.Click += new System.EventHandler(this.уникальныйДизайнКнопкиToolStripMenuItem_Click);
             // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.уникальныйДизайнНадписиToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(283, 28);
+            // 
+            // уникальныйДизайнНадписиToolStripMenuItem
+            // 
+            this.уникальныйДизайнНадписиToolStripMenuItem.Name = "уникальныйДизайнНадписиToolStripMenuItem";
+            this.уникальныйДизайнНадписиToolStripMenuItem.Size = new System.Drawing.Size(282, 24);
+            this.уникальныйДизайнНадписиToolStripMenuItem.Text = "Уникальный дизайн надписи";
+            this.уникальныйДизайнНадписиToolStripMenuItem.Click += new System.EventHandler(this.уникальныйДизайнНадписиToolStripMenuItem_Click);
+            // 
+            // BlockCMS
+            // 
+            this.BlockCMS.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.BlockCMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BlocksDesignMenu});
+            this.BlockCMS.Name = "BlockCMS";
+            this.BlockCMS.Size = new System.Drawing.Size(176, 28);
+            // 
+            // BlocksDesignMenu
+            // 
+            this.BlocksDesignMenu.Name = "BlocksDesignMenu";
+            this.BlocksDesignMenu.Size = new System.Drawing.Size(175, 24);
+            this.BlocksDesignMenu.Text = "Дизайн блока";
+            this.BlocksDesignMenu.Click += new System.EventHandler(this.BlocksDesignMenu_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -232,6 +269,8 @@
             this.AuthPanel.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
+            this.BlockCMS.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -254,6 +293,10 @@
         private System.Windows.Forms.Button DesignButton;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem уникальныйДизайнКнопкиToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem уникальныйДизайнНадписиToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip BlockCMS;
+        private System.Windows.Forms.ToolStripMenuItem BlocksDesignMenu;
     }
 }
 

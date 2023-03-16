@@ -68,6 +68,12 @@
     <Compile Include="AdminUsersUserControl.Designer.cs">
       <DependentUpon>AdminUsersUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="BlocksDesignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlocksDesignForm.Designer.cs">
+      <DependentUpon>BlocksDesignForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DesignUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,6 +143,12 @@
     <Compile Include="UniqueDesignForm.Designer.cs">
       <DependentUpon>UniqueDesignForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UniqueDisignLabelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UniqueDisignLabelForm.Designer.cs">
+      <DependentUpon>UniqueDisignLabelForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminUsersUserControl.resx">
       <DependentUpon>AdminUsersUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlocksDesignForm.resx">
+      <DependentUpon>BlocksDesignForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DesignUserControl.resx">
       <DependentUpon>DesignUserControl.cs</DependentUpon>
@@ -187,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UniqueDesignForm.resx">
       <DependentUpon>UniqueDesignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UniqueDisignLabelForm.resx">
+      <DependentUpon>UniqueDisignLabelForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

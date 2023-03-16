@@ -14,6 +14,7 @@ namespace Comp
     {
 
         public static ContextMenuStrip BUTTON_CM;
+        public static ContextMenuStrip LABEL_CM;
 
         #region textbox
         public static Font TEXTBOX_FONT;
@@ -144,6 +145,22 @@ namespace Comp
             catch (Exception) { }
         }
 
+        public static void ReadUniqueLabelDesign(Label lbl)
+        {
+            //Чтение типа и цвета шрифта лэйбла
+            try
+            {
+                string color = SQLClass.Select("SELECT value FROM uniqueDesign WHERE type = 'System.Windows.Forms.Label' AND name = '" + lbl.Name + "' AND form = '" + lbl.FindForm().Name + "' AND parameter = 'FONT_COLOR'")[0];
+                lbl.ForeColor = Color.FromArgb(Convert.ToInt32(color));
+
+                string font = SQLClass.Select("SELECT value FROM uniqueDesign WHERE type = 'System.Windows.Forms.Label' AND name = '" + lbl.Name + "' AND form = '" + lbl.FindForm().Name + "' AND parameter = 'FONT'")[0];
+                string[] parts = font.Split(new char[] { ';' });
+                lbl.Font = new Font(new FontFamily(parts[0]), (float)Convert.ToDouble(parts[1]));
+            }
+            catch (Exception) { }
+
+            
+        }
         public static void ApplyMenu(Control Form)
         {
             foreach (Control ctrl in Form.Controls)
@@ -155,7 +172,16 @@ namespace Comp
                 else
                 {
                     ApplyMenu(ctrl);
-                }                
+                }
+
+                if(ctrl is Label && MainForm.isAdmin)
+                {
+                    ctrl.ContextMenuStrip = LABEL_CM;
+                }
+                else
+                {
+                    ApplyMenu(ctrl);
+                }
             }
         }
 
@@ -195,6 +221,7 @@ namespace Comp
                 {
                     ctrl.Font = LABEL_FONT;
                     ctrl.ForeColor = LABEL_FONT_COLOR;
+                    //ReadUniqueLabelDesign(ctrl as Label);
                 }
                 else
                 {

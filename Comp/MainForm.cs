@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -36,6 +37,7 @@ namespace Comp
             string id_level1;
 
             DesignUserControl.BUTTON_CM = contextMenuStrip1;
+            DesignUserControl.LABEL_CM = contextMenuStrip2;
 
             List<string> comps = SQLClass.Select("SELECT ID, Name FROM main");
             for(int i=0; i < comps.Count; i+=2)
@@ -262,6 +264,40 @@ namespace Comp
                 designForm.ShowDialog();
             }
             catch (Exception) { }
+        }
+
+        private void уникальныйДизайнНадписиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                ContextMenuStrip cm = (ContextMenuStrip)(item.GetCurrentParent());
+                Label lbl = (Label)(cm.SourceControl);
+                UniqueDisignLabelForm designForm = new UniqueDisignLabelForm(lbl);
+                designForm.ShowDialog();
+            }
+            catch (Exception) { }
+        }
+
+        private void BlocksDesignMenu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                ContextMenuStrip cm = (ContextMenuStrip)(item.GetCurrentParent());
+                TreeView tv = (TreeView)(cm.SourceControl);
+                TableLayoutPanel tp = (TableLayoutPanel)tv.Parent;
+
+                TableLayoutPanelCellPosition pos = tp.GetPositionFromControl(tv);
+
+                BlocksDesignForm bdf = new BlocksDesignForm(tv);
+                bdf.ShowDialog();
+
+                tp.ColumnStyles[pos.Column].Width = bdf.ctrl.Width;
+            }
+            catch (Exception) { }
+
+            
         }
     }
 }
