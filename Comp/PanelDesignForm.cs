@@ -10,28 +10,27 @@ using System.Windows.Forms;
 
 namespace Comp
 {
-    public partial class BlocksDesignForm : Form
+    public partial class PanelDesignForm : Form
     {
         public Control ctrl;
-        public BlocksDesignForm(Control _ctrl)
+        public PanelDesignForm(Control _ctrl)
         {
             ctrl = new Control();
             ctrl.Size = _ctrl.Size;
             ctrl.Name = _ctrl.Name;
             InitializeComponent();
-            
 
-            textBox1.Text = ctrl.Size.Width.ToString();
+            textBox1.Text = ctrl.Size.Height.ToString();
         }
 
-        private void BlocksDesignForm_Load(object sender, EventArgs e)
+        private void PanelDesignForm_Load(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ctrl.Size = new Size(Convert.ToInt32(textBox1.Text), ctrl.Size.Height);
+            ctrl.Size = new Size(ctrl.Width, Convert.ToInt32(textBox1.Text));
         }
     }
 }

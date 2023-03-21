@@ -299,5 +299,40 @@ namespace Comp
 
             
         }
+
+        private void дизайнПанелиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                ContextMenuStrip cm = (ContextMenuStrip)(item.GetCurrentParent());
+                Control ctrl = (cm.SourceControl);
+
+                Control parent = ctrl;
+                while (!(parent is Panel || parent is TableLayoutPanel ||
+                        parent is UserControl || parent is Form))
+                {
+                    parent = parent.Parent;
+                }
+                
+                PanelDesignForm pdf = new PanelDesignForm(ctrl);
+                pdf.ShowDialog();
+
+                ctrl.Size = pdf.ctrl.Size;
+                VKPictureBox.Size = new Size(ctrl.Height, ctrl.Height);
+                WWWPictureBox.Size = VKPictureBox.Size;
+            }
+            catch (Exception) { }
+        }
+
+        private void WWWPictureBox_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://dtci.ru/");
+        }
+
+        private void VKPictureBox_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://vk.com/ingenerka_73");
+        }
     }
 }
