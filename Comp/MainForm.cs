@@ -285,19 +285,20 @@ namespace Comp
             {
                 ToolStripMenuItem item = (ToolStripMenuItem)sender;
                 ContextMenuStrip cm = (ContextMenuStrip)(item.GetCurrentParent());
-                TreeView tv = (TreeView)(cm.SourceControl);
-                TableLayoutPanel tp = (TableLayoutPanel)tv.Parent;
+                Control ctrl = (cm.SourceControl);
 
-                TableLayoutPanelCellPosition pos = tp.GetPositionFromControl(tv);
-
-                BlocksDesignForm bdf = new BlocksDesignForm(tv);
+                Control parent = ctrl;
+                while (!(parent is Panel || parent is TableLayoutPanel ||
+                        parent is UserControl || parent is Form))
+                {
+                    parent = parent.Parent;
+                }
+                
+                BlocksDesignForm bdf = new BlocksDesignForm(ctrl);
                 bdf.ShowDialog();
-
-                tp.ColumnStyles[pos.Column].Width = bdf.ctrl.Width;
+               
             }
-            catch (Exception) { }
-
-            
+            catch (Exception) { }            
         }
 
         private void дизайнПанелиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -319,6 +320,7 @@ namespace Comp
                 pdf.ShowDialog();
 
                 ctrl.Size = pdf.ctrl.Size;
+
                 VKPictureBox.Size = new Size(ctrl.Height, ctrl.Height);
                 WWWPictureBox.Size = VKPictureBox.Size;
             }

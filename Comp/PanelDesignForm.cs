@@ -13,8 +13,16 @@ namespace Comp
     public partial class PanelDesignForm : Form
     {
         public Control ctrl;
+        public Control parent;
         public PanelDesignForm(Control _ctrl)
         {
+            parent = _ctrl;
+            while (!(parent is Panel || parent is TableLayoutPanel ||
+                    parent is UserControl || parent is Form))
+            {
+                parent = parent.Parent;
+            }
+
             ctrl = new Control();
             ctrl.Size = _ctrl.Size;
             ctrl.Name = _ctrl.Name;

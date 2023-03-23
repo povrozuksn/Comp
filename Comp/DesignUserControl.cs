@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Comp
 {
     public partial class DesignUserControl : UserControl
     {
 
+        public static ContextMenuStrip BLOCK_CM;
         public static ContextMenuStrip BUTTON_CM;
         public static ContextMenuStrip LABEL_CM;
 
@@ -92,6 +94,27 @@ namespace Comp
             {
                 string color = SQLClass.Select("SELECT value FROM defaultDesign WHERE type = 'System.Windows.Forms.panel' AND parameter = 'COLOR'")[0];
                 PANEL_COLOR = Color.FromArgb(Convert.ToInt32(color));
+            }
+            catch (Exception) { }
+        }
+
+        public static void ReadBlockDesign(Control block)
+        {
+            Control parent = block;
+            while (!(parent is Panel || parent is TableLayoutPanel ||
+                    parent is UserControl || parent is Form))
+            {
+                parent = parent.Parent;
+            }
+            try
+            {
+                string width = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + block.Name + "' AND form = '" + parent.Name + "' AND parameter = 'WIDTH'")[0];
+            
+                int WIDTH = Convert.ToInt32(width);
+                TableLayoutPanel tp = (TableLayoutPanel)block.Parent;
+                TableLayoutPanelCellPosition pos = tp.GetPositionFromControl(block);
+                tp.ColumnStyles[pos.Column].Width = WIDTH;
+
             }
             catch (Exception) { }
         }
@@ -231,6 +254,16 @@ namespace Comp
                 if (ctrl is Panel)
                 {
                     ctrl.BackColor = PANEL_COLOR;
+                }
+                else
+                {
+                    ApplyDesign(ctrl);
+                }
+
+                if (ctrl.AccessibleDescription == "block")
+                {
+                    ReadBlockDesign(ctrl);
+                    ApplyDesign(ctrl);
                 }
                 else
                 {

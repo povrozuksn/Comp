@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.WidthTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // WidthTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(47, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 30);
-            this.textBox1.TabIndex = 0;
+            this.WidthTextBox.Location = new System.Drawing.Point(47, 61);
+            this.WidthTextBox.Name = "WidthTextBox";
+            this.WidthTextBox.Size = new System.Drawing.Size(160, 30);
+            this.WidthTextBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -66,7 +66,7 @@
             this.ClientSize = new System.Drawing.Size(436, 339);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.WidthTextBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "BlocksDesignForm";
@@ -79,7 +79,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox WidthTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
     }

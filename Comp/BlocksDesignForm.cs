@@ -13,15 +13,23 @@ namespace Comp
     public partial class BlocksDesignForm : Form
     {
         public Control ctrl;
+        public Control parent;
         public BlocksDesignForm(Control _ctrl)
         {
+            parent = _ctrl;
+            while (!(parent is Panel || parent is TableLayoutPanel ||
+                    parent is UserControl || parent is Form))
+            {
+                parent = parent.Parent;
+            }
             ctrl = new Control();
             ctrl.Size = _ctrl.Size;
             ctrl.Name = _ctrl.Name;
             InitializeComponent();
             
 
-            textBox1.Text = ctrl.Size.Width.ToString();
+            WidthTextBox.Text = ctrl.Size.Width.ToString();
+
         }
 
         private void BlocksDesignForm_Load(object sender, EventArgs e)
@@ -31,7 +39,10 @@ namespace Comp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ctrl.Size = new Size(Convert.ToInt32(textBox1.Text), ctrl.Size.Height);
+            ctrl.Size = new Size(Convert.ToInt32(WidthTextBox.Text), ctrl.Size.Height);
+
+            SQLClass.Update("DELETE FROM blockdesign WHERE name = '" + ctrl.Name + "' AND form = '" + parent.Name + "' AND parameter = 'WIDTH'");
+            SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('" + ctrl.Name + "', '" + parent.Name + "', 'WIDTH', '" + WidthTextBox.Text + "')");
         }
     }
 }
