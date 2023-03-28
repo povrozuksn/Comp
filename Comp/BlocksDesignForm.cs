@@ -25,10 +25,10 @@ namespace Comp
             ctrl = new Control();
             ctrl.Size = _ctrl.Size;
             ctrl.Name = _ctrl.Name;
-            InitializeComponent();
-            
+            InitializeComponent();            
 
             WidthTextBox.Text = ctrl.Size.Width.ToString();
+            HeightTextBox.Text = ctrl.Size.Height.ToString();
 
         }
 
@@ -39,10 +39,13 @@ namespace Comp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ctrl.Size = new Size(Convert.ToInt32(WidthTextBox.Text), ctrl.Size.Height);
+            ctrl.Size = new Size(Convert.ToInt32(WidthTextBox.Text), Convert.ToInt32(HeightTextBox.Text));
 
             SQLClass.Update("DELETE FROM blockdesign WHERE name = '" + ctrl.Name + "' AND form = '" + parent.Name + "' AND parameter = 'WIDTH'");
             SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('" + ctrl.Name + "', '" + parent.Name + "', 'WIDTH', '" + WidthTextBox.Text + "')");
+
+            SQLClass.Update("DELETE FROM blockdesign WHERE name = '" + ctrl.Name + "' AND form = '" + parent.Name + "' AND parameter = 'HEIGHT'");
+            SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('" + ctrl.Name + "', '" + parent.Name + "', 'HEIGHT', '" + HeightTextBox.Text + "')");
         }
     }
 }

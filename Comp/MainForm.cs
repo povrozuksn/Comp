@@ -296,36 +296,15 @@ namespace Comp
                 
                 BlocksDesignForm bdf = new BlocksDesignForm(ctrl);
                 bdf.ShowDialog();
-               
+                DesignUserControl.ApplyDesign(this);
+
+                VKPictureBox.Size = new Size(DesignUserControl.HEIGHT, DesignUserControl.HEIGHT);
+                WWWPictureBox.Size = VKPictureBox.Size;
+
             }
             catch (Exception) { }            
         }
 
-        private void дизайнПанелиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ToolStripMenuItem item = (ToolStripMenuItem)sender;
-                ContextMenuStrip cm = (ContextMenuStrip)(item.GetCurrentParent());
-                Control ctrl = (cm.SourceControl);
-
-                Control parent = ctrl;
-                while (!(parent is Panel || parent is TableLayoutPanel ||
-                        parent is UserControl || parent is Form))
-                {
-                    parent = parent.Parent;
-                }
-                
-                PanelDesignForm pdf = new PanelDesignForm(ctrl);
-                pdf.ShowDialog();
-
-                ctrl.Size = pdf.ctrl.Size;
-
-                VKPictureBox.Size = new Size(ctrl.Height, ctrl.Height);
-                WWWPictureBox.Size = VKPictureBox.Size;
-            }
-            catch (Exception) { }
-        }
 
         private void WWWPictureBox_Click(object sender, EventArgs e)
         {

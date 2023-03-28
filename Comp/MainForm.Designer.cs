@@ -32,8 +32,6 @@
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Комплекты");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.AuthPanel = new System.Windows.Forms.Panel();
-            this.PanelCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.дизайнПанелиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DesignButton = new System.Windows.Forms.Button();
             this.HelloLabel = new System.Windows.Forms.Label();
             this.AccountButton = new System.Windows.Forms.Button();
@@ -59,7 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AuthPanel.SuspendLayout();
-            this.PanelCMS.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.BlockCMS.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -71,7 +68,8 @@
             // 
             // AuthPanel
             // 
-            this.AuthPanel.ContextMenuStrip = this.PanelCMS;
+            this.AuthPanel.AccessibleDescription = "block";
+            this.AuthPanel.ContextMenuStrip = this.BlockCMS;
             this.AuthPanel.Controls.Add(this.DesignButton);
             this.AuthPanel.Controls.Add(this.HelloLabel);
             this.AuthPanel.Controls.Add(this.AccountButton);
@@ -87,21 +85,6 @@
             this.AuthPanel.Name = "AuthPanel";
             this.AuthPanel.Size = new System.Drawing.Size(1924, 68);
             this.AuthPanel.TabIndex = 0;
-            // 
-            // PanelCMS
-            // 
-            this.PanelCMS.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.PanelCMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.дизайнПанелиToolStripMenuItem});
-            this.PanelCMS.Name = "PanelCMS";
-            this.PanelCMS.Size = new System.Drawing.Size(186, 28);
-            // 
-            // дизайнПанелиToolStripMenuItem
-            // 
-            this.дизайнПанелиToolStripMenuItem.Name = "дизайнПанелиToolStripMenuItem";
-            this.дизайнПанелиToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
-            this.дизайнПанелиToolStripMenuItem.Text = "Дизайн панели";
-            this.дизайнПанелиToolStripMenuItem.Click += new System.EventHandler(this.дизайнПанелиToolStripMenuItem_Click);
             // 
             // DesignButton
             // 
@@ -286,7 +269,8 @@
             // 
             // CopyRightPanel
             // 
-            this.CopyRightPanel.ContextMenuStrip = this.PanelCMS;
+            this.CopyRightPanel.AccessibleDescription = "block";
+            this.CopyRightPanel.ContextMenuStrip = this.BlockCMS;
             this.CopyRightPanel.Controls.Add(this.WWWPictureBox);
             this.CopyRightPanel.Controls.Add(this.VKPictureBox);
             this.CopyRightPanel.Controls.Add(this.label2);
@@ -351,7 +335,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.AuthPanel.ResumeLayout(false);
             this.AuthPanel.PerformLayout();
-            this.PanelCMS.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.BlockCMS.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -387,8 +370,6 @@
         private System.Windows.Forms.ContextMenuStrip BlockCMS;
         private System.Windows.Forms.ToolStripMenuItem BlocksDesignMenu;
         private System.Windows.Forms.Panel CopyRightPanel;
-        private System.Windows.Forms.ContextMenuStrip PanelCMS;
-        private System.Windows.Forms.ToolStripMenuItem дизайнПанелиToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox VKPictureBox;

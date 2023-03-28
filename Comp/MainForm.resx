@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="PanelCMS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>623, 15</value>
-  </metadata>
   <metadata name="BlockCMS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>490, 17</value>
   </metadata>
@@ -136,7 +133,7 @@
   <data name="WWWPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAuAAAALhCAYAAAAeghGsAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAA/7JJREFUeF7snQdgHMd1/q8A7KR6sYotW7bkmuLELYljO7Hjv2PHLYkTEx3spBpV
+        wAAADsABataJCQAA/7JJREFUeF7snQdgHMd1/q8A7KR6sYotW7bkmuLELYljO7Hjv2PHLYkTEx3spBpV
         rRr1LluyZPVKXENhL2LvYgVBgiCIDpAEeyeIjrvh/31vZu72jgc2sfMN+HH39g4H4HZ25jdvv3njkiJF
         ytlXDh065BadWZlTIUXKWVuknkqRIkWKFCknqSSCoOjMyZwSKVKOuZzOuiN1VIoUKVKkSOmm2A75eGW+
         /aSUZO9/huU5S+T8XRJ/R5HorJG5lKVIkSJFipTzuyTrBE+hnFAIea3mzTuUYvYTXxP3uhNUsveEkr32
@@ -3069,7 +3066,7 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAdkAAAHXCAMAAADHk9BAAAAABGdBTUEAALGPC/xhBQAAADxQTFRF////
         5ubm9PT0r7Cyv7/ASXWWToWnIEFeAi1PAT1pAUV4A0+EAlmQAneyAJPNAWWearfbTJK6ktjyxuP45zjl
-        sAAAAAlwSFlzAAAOwQAADsEBuJFr7QAAq4pJREFUeF7tvYli2zrQpZk413ZsybGdvP+7ztmqAJDU4tz7
+        sAAAAAlwSFlzAAAOwAAADsABataJCQAAq4pJREFUeF7tvYli2zrQpZk413ZsybGdvP+7ztmqAJDU4tz7
         d09PzwEIgBCJpT4VSC2Wv636viq1pdSWUltKbSm1pdSWUltKbSm1pdSWUltKbSm1pdSWUltKbSm1pdSW
         UltKbSm1pdSWUltKbSm1pdSWUltKbSm1pdT+v288VmpLqS2ltpTaUmpLqS2ltpTaUmpLqS2ltpTaUmpL
         qS2ltpTaUmpLqS2ltpTaUmpLqf3f0eODlNqSK1upLaW2lNpSakupLaW2lNpSakupLaW2lNpSakupLX1/

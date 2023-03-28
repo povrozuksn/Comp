@@ -44,4 +44,3 @@ C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.csproj.SuggestedBindingRedi
 C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.UniqueDesignForm.resources
 C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.UniqueDisignLabelForm.resources
 C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.BlocksDesignForm.resources
-C:\Users\root\source\repos\Comp1\Comp\obj\Debug\Comp.PanelDesignForm.resources

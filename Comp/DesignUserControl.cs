@@ -18,6 +18,9 @@ namespace Comp
         public static ContextMenuStrip BUTTON_CM;
         public static ContextMenuStrip LABEL_CM;
 
+        public static int WIDTH;
+        public static int HEIGHT;
+
         #region textbox
         public static Font TEXTBOX_FONT;
         public static Color TEXTBOX_FONT_COLOR;
@@ -109,12 +112,37 @@ namespace Comp
             try
             {
                 string width = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + block.Name + "' AND form = '" + parent.Name + "' AND parameter = 'WIDTH'")[0];
-            
-                int WIDTH = Convert.ToInt32(width);
-                TableLayoutPanel tp = (TableLayoutPanel)block.Parent;
-                TableLayoutPanelCellPosition pos = tp.GetPositionFromControl(block);
-                tp.ColumnStyles[pos.Column].Width = WIDTH;
+                string height = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + block.Name + "' AND form = '" + parent.Name + "' AND parameter = 'HEIGHT'")[0];
 
+                WIDTH = Convert.ToInt32(width);
+                HEIGHT = Convert.ToInt32(height);
+
+                Control parent2 = block;
+                while (!(parent2 is Panel || parent2 is TableLayoutPanel ||
+                    parent2 is UserControl || parent2 is Form))
+                {
+                    parent2 = parent2.Parent;
+                }
+
+                if(parent2 is TableLayoutPanel)
+                {
+                    try
+                    {
+                        TableLayoutPanel tp = (TableLayoutPanel)block.Parent;
+                        TableLayoutPanelCellPosition pos = tp.GetPositionFromControl(block);
+                        tp.ColumnStyles[pos.Column].Width = WIDTH;
+                        tp.RowStyles[pos.Row].Height = HEIGHT;
+                    }
+                    catch (Exception) { }
+                }
+                else
+                {
+                    try
+                    {
+                        parent2.Size = new Size(WIDTH, HEIGHT);                        
+                    }
+                    catch (Exception) { }
+                } 
             }
             catch (Exception) { }
         }

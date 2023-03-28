@@ -30,7 +30,9 @@
         {
             this.WidthTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.HeightTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // WidthTextBox
@@ -49,22 +51,40 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Ширина блока";
             // 
-            // button1
+            // SaveButton
             // 
-            this.button1.Location = new System.Drawing.Point(47, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 44);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SaveButton.Location = new System.Drawing.Point(47, 169);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(160, 44);
+            this.SaveButton.TabIndex = 2;
+            this.SaveButton.Text = "Сохранить";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(42, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(140, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Высота блока";
+            // 
+            // HeightTextBox
+            // 
+            this.HeightTextBox.Location = new System.Drawing.Point(47, 123);
+            this.HeightTextBox.Name = "HeightTextBox";
+            this.HeightTextBox.Size = new System.Drawing.Size(160, 30);
+            this.HeightTextBox.TabIndex = 3;
             // 
             // BlocksDesignForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 339);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.HeightTextBox);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.WidthTextBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -81,6 +101,8 @@
 
         private System.Windows.Forms.TextBox WidthTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox HeightTextBox;
     }
 }
