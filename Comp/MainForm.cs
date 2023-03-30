@@ -297,10 +297,6 @@ namespace Comp
                 BlocksDesignForm bdf = new BlocksDesignForm(ctrl);
                 bdf.ShowDialog();
                 DesignUserControl.ApplyDesign(this);
-
-                VKPictureBox.Size = new Size(DesignUserControl.HEIGHT, DesignUserControl.HEIGHT);
-                WWWPictureBox.Size = VKPictureBox.Size;
-
             }
             catch (Exception) { }            
         }
@@ -314,6 +310,13 @@ namespace Comp
         private void VKPictureBox_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://vk.com/ingenerka_73");
+        }
+
+        private void CopyRightPanel_Resize(object sender, EventArgs e)
+        {
+            VKPictureBox.Size = new Size(CopyRightPanel.Height, CopyRightPanel.Height);
+            WWWPictureBox.Size = VKPictureBox.Size;
+
         }
     }
 }

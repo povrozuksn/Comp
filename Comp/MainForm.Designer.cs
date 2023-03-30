@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Комплекты");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Комплекты");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.AuthPanel = new System.Windows.Forms.Panel();
+            this.BlockCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.BlocksDesignMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.DesignButton = new System.Windows.Forms.Button();
             this.HelloLabel = new System.Windows.Forms.Label();
             this.AccountButton = new System.Windows.Forms.Button();
@@ -44,8 +46,6 @@
             this.ViewPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.BlockCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.BlocksDesignMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.уникальныйДизайнКнопкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,8 +57,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AuthPanel.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.BlockCMS.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.CopyRightPanel.SuspendLayout();
@@ -70,7 +70,6 @@
             // 
             this.AuthPanel.AccessibleDescription = "block";
             this.AuthPanel.ContextMenuStrip = this.BlockCMS;
-            this.AuthPanel.Controls.Add(this.DesignButton);
             this.AuthPanel.Controls.Add(this.HelloLabel);
             this.AuthPanel.Controls.Add(this.AccountButton);
             this.AuthPanel.Controls.Add(this.label5);
@@ -79,6 +78,7 @@
             this.AuthPanel.Controls.Add(this.PaswTextBox);
             this.AuthPanel.Controls.Add(this.label4);
             this.AuthPanel.Controls.Add(this.AdminPanelButton);
+            this.AuthPanel.Controls.Add(this.DesignButton);
             this.AuthPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.AuthPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AuthPanel.Location = new System.Drawing.Point(0, 0);
@@ -86,10 +86,25 @@
             this.AuthPanel.Size = new System.Drawing.Size(1924, 68);
             this.AuthPanel.TabIndex = 0;
             // 
+            // BlockCMS
+            // 
+            this.BlockCMS.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.BlockCMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BlocksDesignMenu});
+            this.BlockCMS.Name = "BlockCMS";
+            this.BlockCMS.Size = new System.Drawing.Size(176, 28);
+            // 
+            // BlocksDesignMenu
+            // 
+            this.BlocksDesignMenu.Name = "BlocksDesignMenu";
+            this.BlocksDesignMenu.Size = new System.Drawing.Size(175, 24);
+            this.BlocksDesignMenu.Text = "Дизайн блока";
+            this.BlocksDesignMenu.Click += new System.EventHandler(this.BlocksDesignMenu_Click);
+            // 
             // DesignButton
             // 
             this.DesignButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DesignButton.Location = new System.Drawing.Point(1487, 17);
+            this.DesignButton.Location = new System.Drawing.Point(415, 16);
             this.DesignButton.Name = "DesignButton";
             this.DesignButton.Size = new System.Drawing.Size(155, 33);
             this.DesignButton.TabIndex = 23;
@@ -209,28 +224,13 @@
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Узел0";
-            treeNode1.Text = "Комплекты";
+            treeNode2.Name = "Узел0";
+            treeNode2.Text = "Комплекты";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode2});
             this.treeView1.Size = new System.Drawing.Size(294, 605);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            // 
-            // BlockCMS
-            // 
-            this.BlockCMS.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.BlockCMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BlocksDesignMenu});
-            this.BlockCMS.Name = "BlockCMS";
-            this.BlockCMS.Size = new System.Drawing.Size(176, 28);
-            // 
-            // BlocksDesignMenu
-            // 
-            this.BlocksDesignMenu.Name = "BlocksDesignMenu";
-            this.BlocksDesignMenu.Size = new System.Drawing.Size(175, 24);
-            this.BlocksDesignMenu.Text = "Дизайн блока";
-            this.BlocksDesignMenu.Click += new System.EventHandler(this.BlocksDesignMenu_Click);
             // 
             // timer1
             // 
@@ -281,6 +281,7 @@
             this.CopyRightPanel.Name = "CopyRightPanel";
             this.CopyRightPanel.Size = new System.Drawing.Size(1924, 43);
             this.CopyRightPanel.TabIndex = 3;
+            this.CopyRightPanel.Resize += new System.EventHandler(this.CopyRightPanel_Resize);
             // 
             // WWWPictureBox
             // 
@@ -335,8 +336,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.AuthPanel.ResumeLayout(false);
             this.AuthPanel.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.BlockCMS.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             this.CopyRightPanel.ResumeLayout(false);

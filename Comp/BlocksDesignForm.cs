@@ -30,6 +30,8 @@ namespace Comp
             WidthTextBox.Text = ctrl.Size.Width.ToString();
             HeightTextBox.Text = ctrl.Size.Height.ToString();
 
+            CopyRightCLB.Visible = (ctrl.Name == "CopyRightPanel");
+
         }
 
         private void BlocksDesignForm_Load(object sender, EventArgs e)
@@ -46,6 +48,19 @@ namespace Comp
 
             SQLClass.Update("DELETE FROM blockdesign WHERE name = '" + ctrl.Name + "' AND form = '" + parent.Name + "' AND parameter = 'HEIGHT'");
             SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('" + ctrl.Name + "', '" + parent.Name + "', 'HEIGHT', '" + HeightTextBox.Text + "')");
+
+            SQLClass.Update("DELETE FROM blockdesign WHERE name = '" + ctrl.Name + "' AND form = '" + parent.Name + "' AND parameter = 'VK'");            
+            SQLClass.Update("DELETE FROM blockdesign WHERE name = '" + ctrl.Name + "' AND form = '" + parent.Name + "' AND parameter = 'WWW'");
+            
+            foreach(object item in CopyRightCLB.CheckedItems)
+            {
+                if(item.ToString() == "VK")
+                    SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('" + ctrl.Name + "', '" + parent.Name + "', 'VK', '1')");
+                if (item.ToString() == "WWW")
+                    SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('" + ctrl.Name + "', '" + parent.Name + "', 'WWW', '1')");
+            }
+            MessageBox.Show("Сохранено");
+            Close();
         }
     }
 }

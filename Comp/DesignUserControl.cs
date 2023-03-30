@@ -18,9 +18,6 @@ namespace Comp
         public static ContextMenuStrip BUTTON_CM;
         public static ContextMenuStrip LABEL_CM;
 
-        public static int WIDTH;
-        public static int HEIGHT;
-
         #region textbox
         public static Font TEXTBOX_FONT;
         public static Color TEXTBOX_FONT_COLOR;
@@ -114,8 +111,8 @@ namespace Comp
                 string width = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + block.Name + "' AND form = '" + parent.Name + "' AND parameter = 'WIDTH'")[0];
                 string height = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + block.Name + "' AND form = '" + parent.Name + "' AND parameter = 'HEIGHT'")[0];
 
-                WIDTH = Convert.ToInt32(width);
-                HEIGHT = Convert.ToInt32(height);
+                int WIDTH = Convert.ToInt32(width);
+                int HEIGHT = Convert.ToInt32(height);
 
                 Control parent2 = block;
                 while (!(parent2 is Panel || parent2 is TableLayoutPanel ||
