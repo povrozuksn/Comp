@@ -32,6 +32,31 @@ namespace Comp
 
             CopyRightCLB.Visible = (ctrl.Name == "CopyRightPanel");
 
+            if(ctrl.Name == "CopyRightPanel")
+            {
+                try
+                {
+                    string vk = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + ctrl.Name + "' AND form = '" + parent.Name + "' AND parameter = 'VK'")[0];
+                    if(vk == "1")
+                    {
+                        CopyRightCLB.SetItemChecked(0, true);
+                    }
+
+                }
+                catch (Exception) { }
+
+                try
+                {
+                    string www = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + ctrl.Name + "' AND form = '" + parent.Name + "' AND parameter = 'WWW'")[0];
+                    if (www == "1")
+                    {
+                        CopyRightCLB.SetItemChecked(1, true);
+                    }
+                }
+                catch (Exception) { }
+            }
+
+
         }
 
         private void BlocksDesignForm_Load(object sender, EventArgs e)
@@ -55,9 +80,9 @@ namespace Comp
             foreach(object item in CopyRightCLB.CheckedItems)
             {
                 if(item.ToString() == "VK")
-                    SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('" + ctrl.Name + "', '" + parent.Name + "', 'VK', '1')");
+                    SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('CopyRigthUserControl', 'CopyRigthUserControl', 'VK', '1')");
                 if (item.ToString() == "WWW")
-                    SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('" + ctrl.Name + "', '" + parent.Name + "', 'WWW', '1')");
+                    SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('CopyRigthUserControl', 'CopyRigthUserControl', 'WWW', '1')");
             }
             MessageBox.Show("Сохранено");
             Close();

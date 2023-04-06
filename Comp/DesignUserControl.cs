@@ -106,6 +106,8 @@ namespace Comp
             {
                 parent = parent.Parent;
             }
+
+            #region Применение параметров блока из БД
             try
             {
                 string width = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + block.Name + "' AND form = '" + parent.Name + "' AND parameter = 'WIDTH'")[0];
@@ -142,6 +144,32 @@ namespace Comp
                 } 
             }
             catch (Exception) { }
+            #endregion
+
+            if (block.Name == "CopyRigthUserControl")
+            {
+                CopyRigthUserControl copyRigthUserControl = (CopyRigthUserControl)block;
+
+                copyRigthUserControl.VKPictureBox.Visible = false;
+                try
+                {
+                    string vk = SQLClass.Select("SELECT value FROM blockdesign WHERE name = 'CopyRigthUserControl' AND form = 'CopyRigthUserControl' AND parameter = 'VK'")[0];
+                    copyRigthUserControl.VKPictureBox.Visible = (vk == "1");
+                }
+                catch (Exception) { }
+
+
+                copyRigthUserControl.WWWPictureBox.Visible = false;
+                try
+                {
+                    string www = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + block.Name + "' AND form = '" + block.Name + "' AND parameter = 'WWW'")[0];
+                    copyRigthUserControl.WWWPictureBox.Visible = (www == "1");
+
+                }
+                catch (Exception) { }
+
+            }
+
         }
 
         public static void ReadUniqueButtonDesign(Button btn)

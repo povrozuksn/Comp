@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Комплекты");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Комплекты");
             this.AuthPanel = new System.Windows.Forms.Panel();
             this.BlockCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.BlocksDesignMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.DesignButton = new System.Windows.Forms.Button();
             this.HelloLabel = new System.Windows.Forms.Label();
             this.AccountButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,6 +41,7 @@
             this.PaswTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.AdminPanelButton = new System.Windows.Forms.Button();
+            this.DesignButton = new System.Windows.Forms.Button();
             this.ViewPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -52,18 +51,11 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.уникальныйДизайнНадписиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CopyRightPanel = new System.Windows.Forms.Panel();
-            this.WWWPictureBox = new System.Windows.Forms.PictureBox();
-            this.VKPictureBox = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.AuthPanel.SuspendLayout();
             this.BlockCMS.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
-            this.CopyRightPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WWWPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VKPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // AuthPanel
@@ -100,17 +92,6 @@
             this.BlocksDesignMenu.Size = new System.Drawing.Size(175, 24);
             this.BlocksDesignMenu.Text = "Дизайн блока";
             this.BlocksDesignMenu.Click += new System.EventHandler(this.BlocksDesignMenu_Click);
-            // 
-            // DesignButton
-            // 
-            this.DesignButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DesignButton.Location = new System.Drawing.Point(415, 16);
-            this.DesignButton.Name = "DesignButton";
-            this.DesignButton.Size = new System.Drawing.Size(155, 33);
-            this.DesignButton.TabIndex = 23;
-            this.DesignButton.Text = "Дизайн";
-            this.DesignButton.UseVisualStyleBackColor = true;
-            this.DesignButton.Click += new System.EventHandler(this.DesignButton_Click);
             // 
             // HelloLabel
             // 
@@ -193,6 +174,17 @@
             this.AdminPanelButton.Visible = false;
             this.AdminPanelButton.Click += new System.EventHandler(this.AdminPanelButton_Click);
             // 
+            // DesignButton
+            // 
+            this.DesignButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DesignButton.Location = new System.Drawing.Point(415, 16);
+            this.DesignButton.Name = "DesignButton";
+            this.DesignButton.Size = new System.Drawing.Size(155, 33);
+            this.DesignButton.TabIndex = 23;
+            this.DesignButton.Text = "Дизайн";
+            this.DesignButton.UseVisualStyleBackColor = true;
+            this.DesignButton.Click += new System.EventHandler(this.DesignButton_Click);
+            // 
             // ViewPanel
             // 
             this.ViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -224,10 +216,10 @@
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode2.Name = "Узел0";
-            treeNode2.Text = "Комплекты";
+            treeNode1.Name = "Узел0";
+            treeNode1.Text = "Комплекты";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.treeView1.Size = new System.Drawing.Size(294, 605);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -271,57 +263,12 @@
             // 
             this.CopyRightPanel.AccessibleDescription = "block";
             this.CopyRightPanel.ContextMenuStrip = this.BlockCMS;
-            this.CopyRightPanel.Controls.Add(this.WWWPictureBox);
-            this.CopyRightPanel.Controls.Add(this.VKPictureBox);
-            this.CopyRightPanel.Controls.Add(this.label2);
-            this.CopyRightPanel.Controls.Add(this.label1);
             this.CopyRightPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CopyRightPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CopyRightPanel.Location = new System.Drawing.Point(0, 636);
             this.CopyRightPanel.Name = "CopyRightPanel";
             this.CopyRightPanel.Size = new System.Drawing.Size(1924, 43);
             this.CopyRightPanel.TabIndex = 3;
-            this.CopyRightPanel.Resize += new System.EventHandler(this.CopyRightPanel_Resize);
-            // 
-            // WWWPictureBox
-            // 
-            this.WWWPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("WWWPictureBox.Image")));
-            this.WWWPictureBox.Location = new System.Drawing.Point(306, 4);
-            this.WWWPictureBox.Name = "WWWPictureBox";
-            this.WWWPictureBox.Size = new System.Drawing.Size(37, 37);
-            this.WWWPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.WWWPictureBox.TabIndex = 3;
-            this.WWWPictureBox.TabStop = false;
-            this.WWWPictureBox.Click += new System.EventHandler(this.WWWPictureBox_Click);
-            // 
-            // VKPictureBox
-            // 
-            this.VKPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("VKPictureBox.Image")));
-            this.VKPictureBox.Location = new System.Drawing.Point(225, 4);
-            this.VKPictureBox.Name = "VKPictureBox";
-            this.VKPictureBox.Size = new System.Drawing.Size(37, 37);
-            this.VKPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.VKPictureBox.TabIndex = 2;
-            this.VKPictureBox.TabStop = false;
-            this.VKPictureBox.Click += new System.EventHandler(this.VKPictureBox_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Наши соц.сети";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1076, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Все права защищены";
             // 
             // MainForm
             // 
@@ -340,10 +287,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
-            this.CopyRightPanel.ResumeLayout(false);
-            this.CopyRightPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WWWPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VKPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,10 +314,6 @@
         private System.Windows.Forms.ContextMenuStrip BlockCMS;
         private System.Windows.Forms.ToolStripMenuItem BlocksDesignMenu;
         private System.Windows.Forms.Panel CopyRightPanel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox VKPictureBox;
-        private System.Windows.Forms.PictureBox WWWPictureBox;
     }
 }
 

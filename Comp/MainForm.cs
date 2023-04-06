@@ -27,6 +27,11 @@ namespace Comp
             ViewPanel.Controls.Clear();
             ViewPanel.Controls.Add(mainUC);
 
+            CopyRigthUserControl crUC = new CopyRigthUserControl();
+            crUC.Dock = DockStyle.Fill;
+            CopyRightPanel.Controls.Clear();
+            CopyRightPanel.Controls.Add(crUC);
+
             DesignUserControl.ApplyDesign(this);
             DesignUserControl.ApplyMenu(this);
         }
@@ -299,24 +304,6 @@ namespace Comp
                 DesignUserControl.ApplyDesign(this);
             }
             catch (Exception) { }            
-        }
-
-
-        private void WWWPictureBox_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://dtci.ru/");
-        }
-
-        private void VKPictureBox_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://vk.com/ingenerka_73");
-        }
-
-        private void CopyRightPanel_Resize(object sender, EventArgs e)
-        {
-            VKPictureBox.Size = new Size(CopyRightPanel.Height, CopyRightPanel.Height);
-            WWWPictureBox.Size = VKPictureBox.Size;
-
         }
     }
 }

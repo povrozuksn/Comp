@@ -74,6 +74,12 @@
     <Compile Include="BlocksDesignForm.Designer.cs">
       <DependentUpon>BlocksDesignForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CopyRigthUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CopyRigthUserControl.Designer.cs">
+      <DependentUpon>CopyRigthUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DesignUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BlocksDesignForm.resx">
       <DependentUpon>BlocksDesignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CopyRigthUserControl.resx">
+      <DependentUpon>CopyRigthUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DesignUserControl.resx">
       <DependentUpon>DesignUserControl.cs</DependentUpon>
