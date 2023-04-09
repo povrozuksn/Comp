@@ -17,8 +17,7 @@ namespace Comp
         public BlocksDesignForm(Control _ctrl)
         {
             parent = _ctrl;
-            while (!(parent is Panel || parent is TableLayoutPanel ||
-                    parent is UserControl || parent is Form))
+            while (!(parent is Panel || parent is UserControl || parent is Form))
             {
                 parent = parent.Parent;
             }
@@ -30,9 +29,9 @@ namespace Comp
             WidthTextBox.Text = ctrl.Size.Width.ToString();
             HeightTextBox.Text = ctrl.Size.Height.ToString();
 
-            CopyRightCLB.Visible = (ctrl.Name == "CopyRightPanel");
+            CopyRightCLB.Visible = (ctrl.Name == "CopyRightUserControl" || ctrl.Name == "CopyRightPanel");
 
-            if(ctrl.Name == "CopyRightPanel")
+            if(ctrl.Name == "CopyRightUserControl" || ctrl.Name == "CopyRightPanel")
             {
                 try
                 {
@@ -80,9 +79,9 @@ namespace Comp
             foreach(object item in CopyRightCLB.CheckedItems)
             {
                 if(item.ToString() == "VK")
-                    SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('CopyRigthUserControl', 'CopyRigthUserControl', 'VK', '1')");
+                    SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('" + ctrl.Name + "', '" + parent.Name + "', 'VK', '1')");
                 if (item.ToString() == "WWW")
-                    SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('CopyRigthUserControl', 'CopyRigthUserControl', 'WWW', '1')");
+                    SQLClass.Update("INSERT INTO blockdesign (name, form, parameter, value) VALUES ('" + ctrl.Name + "', '" + parent.Name + "', 'WWW', '1')");
             }
             MessageBox.Show("Сохранено");
             Close();

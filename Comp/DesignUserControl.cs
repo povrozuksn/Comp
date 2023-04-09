@@ -101,8 +101,7 @@ namespace Comp
         public static void ReadBlockDesign(Control block)
         {
             Control parent = block;
-            while (!(parent is Panel || parent is TableLayoutPanel ||
-                    parent is UserControl || parent is Form))
+            while (!(parent is Panel || parent is UserControl || parent is Form))
             {
                 parent = parent.Parent;
             }
@@ -117,8 +116,7 @@ namespace Comp
                 int HEIGHT = Convert.ToInt32(height);
 
                 Control parent2 = block;
-                while (!(parent2 is Panel || parent2 is TableLayoutPanel ||
-                    parent2 is UserControl || parent2 is Form))
+                while (!(parent2 is Panel || parent2 is TableLayoutPanel))
                 {
                     parent2 = parent2.Parent;
                 }
@@ -146,24 +144,24 @@ namespace Comp
             catch (Exception) { }
             #endregion
 
-            if (block.Name == "CopyRigthUserControl")
+            if (block.Name == "CopyRightUserControl")
             {
-                CopyRigthUserControl copyRigthUserControl = (CopyRigthUserControl)block;
+                CopyRightUserControl copyRightUserControl = (CopyRightUserControl)block;
 
-                copyRigthUserControl.VKPictureBox.Visible = false;
+                copyRightUserControl.VKPictureBox.Visible = false;
                 try
                 {
-                    string vk = SQLClass.Select("SELECT value FROM blockdesign WHERE name = 'CopyRigthUserControl' AND form = 'CopyRigthUserControl' AND parameter = 'VK'")[0];
-                    copyRigthUserControl.VKPictureBox.Visible = (vk == "1");
+                    string vk = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + block.Name + "' AND form = '" + parent.Name + "' AND parameter = 'VK'")[0];
+                    copyRightUserControl.VKPictureBox.Visible = (vk == "1");
                 }
                 catch (Exception) { }
 
 
-                copyRigthUserControl.WWWPictureBox.Visible = false;
+                copyRightUserControl.WWWPictureBox.Visible = false;
                 try
                 {
-                    string www = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + block.Name + "' AND form = '" + block.Name + "' AND parameter = 'WWW'")[0];
-                    copyRigthUserControl.WWWPictureBox.Visible = (www == "1");
+                    string www = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + block.Name + "' AND form = '" + parent.Name + "' AND parameter = 'WWW'")[0];
+                    copyRightUserControl.WWWPictureBox.Visible = (www == "1");
 
                 }
                 catch (Exception) { }

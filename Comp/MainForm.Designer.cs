@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Комплекты");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Комплекты");
             this.AuthPanel = new System.Windows.Forms.Panel();
             this.BlockCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.BlocksDesignMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -216,10 +216,10 @@
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Узел0";
-            treeNode1.Text = "Комплекты";
+            treeNode2.Name = "Узел0";
+            treeNode2.Text = "Комплекты";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode2});
             this.treeView1.Size = new System.Drawing.Size(294, 605);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -262,12 +262,11 @@
             // CopyRightPanel
             // 
             this.CopyRightPanel.AccessibleDescription = "block";
-            this.CopyRightPanel.ContextMenuStrip = this.BlockCMS;
             this.CopyRightPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CopyRightPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CopyRightPanel.Location = new System.Drawing.Point(0, 636);
+            this.CopyRightPanel.Location = new System.Drawing.Point(0, 649);
             this.CopyRightPanel.Name = "CopyRightPanel";
-            this.CopyRightPanel.Size = new System.Drawing.Size(1924, 43);
+            this.CopyRightPanel.Size = new System.Drawing.Size(1924, 30);
             this.CopyRightPanel.TabIndex = 3;
             // 
             // MainForm

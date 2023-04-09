@@ -27,7 +27,10 @@ namespace Comp
             ViewPanel.Controls.Clear();
             ViewPanel.Controls.Add(mainUC);
 
-            CopyRigthUserControl crUC = new CopyRigthUserControl();
+
+            DesignUserControl.BLOCK_CM = BlockCMS;
+
+            CopyRightUserControl crUC = new CopyRightUserControl();
             crUC.Dock = DockStyle.Fill;
             CopyRightPanel.Controls.Clear();
             CopyRightPanel.Controls.Add(crUC);
