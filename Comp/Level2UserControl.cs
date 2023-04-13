@@ -24,6 +24,7 @@ namespace Comp
                 Text = lev2[3];
                 label1.Text = lev2[3];
                 pictureBox1.Load("../../Pictures/" + lev2[4]);
+                label1.Text = lev2[3];
             }
             catch (Exception) { };
 

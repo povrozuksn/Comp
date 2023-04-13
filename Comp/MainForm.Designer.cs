@@ -51,6 +51,7 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.уникальныйДизайнНадписиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CopyRightPanel = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.AuthPanel.SuspendLayout();
             this.BlockCMS.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -190,7 +191,7 @@
             this.ViewPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ViewPanel.Location = new System.Drawing.Point(303, 3);
             this.ViewPanel.Name = "ViewPanel";
-            this.ViewPanel.Size = new System.Drawing.Size(1618, 605);
+            this.ViewPanel.Size = new System.Drawing.Size(1618, 525);
             this.ViewPanel.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -200,12 +201,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.ViewPanel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.treeView1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 68);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1924, 611);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1924, 531);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // treeView1
@@ -220,7 +220,7 @@
             treeNode2.Text = "Комплекты";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode2});
-            this.treeView1.Size = new System.Drawing.Size(294, 605);
+            this.treeView1.Size = new System.Drawing.Size(294, 525);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -264,16 +264,31 @@
             this.CopyRightPanel.AccessibleDescription = "block";
             this.CopyRightPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CopyRightPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CopyRightPanel.Location = new System.Drawing.Point(0, 649);
+            this.CopyRightPanel.Location = new System.Drawing.Point(0, 644);
             this.CopyRightPanel.Name = "CopyRightPanel";
-            this.CopyRightPanel.Size = new System.Drawing.Size(1924, 30);
+            this.CopyRightPanel.Size = new System.Drawing.Size(1924, 35);
             this.CopyRightPanel.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Рубли",
+            "Доллары",
+            "Евро",
+            "Юани"});
+            this.comboBox1.Location = new System.Drawing.Point(313, 605);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(170, 33);
+            this.comboBox1.TabIndex = 4;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 679);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.CopyRightPanel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.AuthPanel);
@@ -313,6 +328,7 @@
         private System.Windows.Forms.ContextMenuStrip BlockCMS;
         private System.Windows.Forms.ToolStripMenuItem BlocksDesignMenu;
         private System.Windows.Forms.Panel CopyRightPanel;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

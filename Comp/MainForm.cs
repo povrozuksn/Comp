@@ -17,6 +17,9 @@ namespace Comp
         public static string Login = "";
         public static string NameSurname = "";
         public static bool isAdmin = false;
+        public static string OldValute = "Рубли";
+        public static string NewValute = "Рубли";
+
 
         public MainForm()
         {
@@ -37,6 +40,8 @@ namespace Comp
 
             DesignUserControl.ApplyDesign(this);
             DesignUserControl.ApplyMenu(this);
+
+            APIClass.Vals();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
