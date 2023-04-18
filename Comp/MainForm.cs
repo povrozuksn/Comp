@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Windows.Forms;
 
 namespace Comp
@@ -30,7 +31,6 @@ namespace Comp
             ViewPanel.Controls.Clear();
             ViewPanel.Controls.Add(mainUC);
 
-
             DesignUserControl.BLOCK_CM = BlockCMS;
 
             CopyRightUserControl crUC = new CopyRightUserControl();
@@ -42,6 +42,7 @@ namespace Comp
             DesignUserControl.ApplyMenu(this);
 
             APIClass.Vals();
+            comboBox1.SelectedIndex = 0;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -312,6 +313,38 @@ namespace Comp
                 DesignUserControl.ApplyDesign(this);
             }
             catch (Exception) { }            
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OldValute = NewValute;
+            NewValute = comboBox1.Text;
+
+            double coef = APIClass.vals[OldValute] / APIClass.vals[NewValute];
+
+            var pricelb = Controls.Find("PriceLabel", true);
+
+            foreach (Label lbl in pricelb)
+            {
+                double price = Convert.ToDouble(lbl.Text);
+                price = Math.Round((price * coef), 2);
+                lbl.Text = price.ToString();
+            }
+
+            var lblb = Controls.Find("LabelLabel", true);
+
+            foreach (Label lbl in lblb)
+            {
+                if(NewValute == "Рубли")
+                    lbl.Text = "Цена, руб.";
+                else if (NewValute == "Доллары")
+                    lbl.Text = "Цена, $";
+                else if (NewValute == "Евро")
+                    lbl.Text = "Цена, евро.";
+                else if (NewValute == "Юани")
+                    lbl.Text = "Цена, юан.";
+
+            }
         }
     }
 }

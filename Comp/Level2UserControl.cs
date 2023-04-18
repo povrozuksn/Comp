@@ -22,9 +22,9 @@ namespace Comp
             try
             {
                 Text = lev2[3];
-                label1.Text = lev2[3];
+                NameLabel.Text = lev2[3];
                 pictureBox1.Load("../../Pictures/" + lev2[4]);
-                label1.Text = lev2[3];
+                PriceLabel.Text = lev2[7];
             }
             catch (Exception) { };
 

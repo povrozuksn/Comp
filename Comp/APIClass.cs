@@ -11,7 +11,7 @@ namespace Comp
 {
     public static class APIClass
     {
-
+        public static Dictionary<string, double> vals = new Dictionary<string, double>();
 
         public static void Vals()
         {
@@ -26,9 +26,18 @@ namespace Comp
             response.Close();
 
             dynamic d = JsonConvert.DeserializeObject(sReadData);
-            string usd = d.Valute.USD.Value;
-            string eur = d.Valute.EUR.Value;
-            string cny = d.Valute.CNY.Value;
+            string usd = d.Valute.USD.Value.ToString();
+            string eur = d.Valute.EUR.Value.ToString();
+            string cny = d.Valute.CNY.Value.ToString();
+
+            double Usd = Convert.ToDouble(usd);
+            double Eur = Convert.ToDouble(eur);
+            double Cny = Convert.ToDouble(cny);
+
+            vals.Add("Рубли", 1);
+            vals.Add("Доллары", Usd);
+            vals.Add("Евро", Eur);
+            vals.Add("Юани", Cny);
         }
     }
 }

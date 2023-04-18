@@ -29,25 +29,36 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PriceLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.LabelLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.LabelLabel);
+            this.panel1.Controls.Add(this.PriceLabel);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.NameLabel);
             this.panel1.Location = new System.Drawing.Point(16, 17);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(840, 466);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Location = new System.Drawing.Point(176, 266);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(64, 25);
+            this.PriceLabel.TabIndex = 3;
+            this.PriceLabel.Text = "label2";
             // 
             // textBox1
             // 
@@ -67,24 +78,24 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // NameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(9, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameLabel.Location = new System.Drawing.Point(9, 21);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(59, 25);
+            this.NameLabel.TabIndex = 0;
+            this.NameLabel.Text = "Nane";
             // 
-            // label2
+            // LabelLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 270);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 25);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.LabelLabel.AutoSize = true;
+            this.LabelLabel.Location = new System.Drawing.Point(17, 266);
+            this.LabelLabel.Name = "LabelLabel";
+            this.LabelLabel.Size = new System.Drawing.Size(104, 25);
+            this.LabelLabel.TabIndex = 4;
+            this.LabelLabel.Text = "Цена, руб.";
             // 
             // Level2UserControl
             // 
@@ -107,8 +118,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.Label LabelLabel;
     }
 }
