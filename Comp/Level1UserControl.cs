@@ -16,6 +16,8 @@ namespace Comp
         {
             InitializeComponent();
 
+            double totalprice = 0;
+
             List<string> lev1 = SQLClass.Select("SELECT ID, Name, Image FROM level1 WHERE ID = '" + id_level1 + "'");
             List<string> lev2 = SQLClass.Select("SELECT ID, Name, Image, Specs, Quantity, Price FROM level2 WHERE id_level1 = '" + id_level1 + "'");
 
@@ -55,9 +57,38 @@ namespace Comp
                 lbl.Click += new EventHandler(label_Click);
                 Level1Panel.Controls.Add(lbl);
 
+                Label lbl1 = new Label();
+                lbl1.Name = "PriceLabel";
+                lbl1.Location = new Point(x+100, 180);
+                lbl1.Size = new Size(100, 30);
+                lbl1.Font = new Font("Microsoft Sans Serif", 12);
+                lbl1.Text = lev2[i + 5];
+                Level1Panel.Controls.Add(lbl1);
+
+                Label lbl2 = new Label();
+                lbl2.Name = "LabelLabel";
+                lbl2.Location = new Point(x, 180);
+                lbl2.Size = new Size(100, 30);
+                lbl2.Font = new Font("Microsoft Sans Serif", 12);
+                lbl2.Text = "Цена, руб.";
+                Level1Panel.Controls.Add(lbl2);
+
                 x += 240;
+
+                totalprice += Convert.ToDouble(lbl1.Text);
             }
 
+            LabelLabel.Visible = false;
+            PriceLabel.Visible = false;
+            PriceLabel.Text = totalprice.ToString();
+            
+            string pk = label1.Text.Remove(2);
+            if(pk == "ПК")
+            {
+                LabelLabel.Visible = true;
+                PriceLabel.Visible = true;                
+            }
+            
 
             DesignUserControl.ApplyDesign(this);
         }

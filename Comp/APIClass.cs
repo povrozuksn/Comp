@@ -13,6 +13,11 @@ namespace Comp
     {
         public static Dictionary<string, double> vals = new Dictionary<string, double>();
 
+        public static string temper;
+
+        /// <summary>
+        /// API курсов валют
+        /// </summary>
         public static void Vals()
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(
@@ -38,6 +43,25 @@ namespace Comp
             vals.Add("Доллары", Usd);
             vals.Add("Евро", Eur);
             vals.Add("Юани", Cny);
+        }
+
+        /// <summary>
+        /// API курсов валют
+        /// </summary>
+        public static void Weather()
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(
+                "https://api.open-meteo.com/v1/forecast?latitude=54.3282&longitude=48.3866&hourly=temperature_2m");
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader sr = new StreamReader(stream);
+
+            string sReadData = sr.ReadToEnd();
+            response.Close();
+
+            dynamic w = JsonConvert.DeserializeObject(sReadData);
+            temper = w.hourly.temperature_2m[12].ToString();
         }
     }
 }

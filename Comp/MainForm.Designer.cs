@@ -52,6 +52,7 @@
             this.уникальныйДизайнНадписиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CopyRightPanel = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.WeatherLabel = new System.Windows.Forms.Label();
             this.AuthPanel.SuspendLayout();
             this.BlockCMS.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -285,11 +286,21 @@
             this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // WeatherLabel
+            // 
+            this.WeatherLabel.AutoSize = true;
+            this.WeatherLabel.Location = new System.Drawing.Point(15, 611);
+            this.WeatherLabel.Name = "WeatherLabel";
+            this.WeatherLabel.Size = new System.Drawing.Size(44, 16);
+            this.WeatherLabel.TabIndex = 5;
+            this.WeatherLabel.Text = "label1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 679);
+            this.Controls.Add(this.WeatherLabel);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.CopyRightPanel);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -304,6 +315,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -331,6 +343,7 @@
         private System.Windows.Forms.ToolStripMenuItem BlocksDesignMenu;
         private System.Windows.Forms.Panel CopyRightPanel;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label WeatherLabel;
     }
 }
 

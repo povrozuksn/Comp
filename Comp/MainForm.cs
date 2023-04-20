@@ -43,6 +43,9 @@ namespace Comp
 
             APIClass.Vals();
             comboBox1.SelectedIndex = 0;
+
+            APIClass.Weather();
+            WeatherLabel.Text = "Погода: " + APIClass.temper + " C";
         }
 
         private void MainForm_Load(object sender, EventArgs e)
