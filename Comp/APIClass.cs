@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Comp
 {
@@ -46,7 +47,7 @@ namespace Comp
         }
 
         /// <summary>
-        /// API курсов валют
+        /// API погоды в Ульяновске
         /// </summary>
         public static void Weather()
         {
@@ -63,5 +64,6 @@ namespace Comp
             dynamic w = JsonConvert.DeserializeObject(sReadData);
             temper = w.hourly.temperature_2m[12].ToString();
         }
+
     }
 }

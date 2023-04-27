@@ -77,10 +77,18 @@ namespace Comp
                 btn.Text = "Удалить";
                 panel1.Controls.Add(btn);
 
+                Button btn1 = new Button();
+                btn1.Location = new Point(650, y);
+                btn1.Size = new Size(100, 30);
+                btn1.Font = new Font("Microsoft Sans Serif", 12);
+                btn1.Click += new EventHandler(Refresh);
+                btn1.Text = "Обновить";
+                panel1.Controls.Add(btn1);
+
                 y += 35;
             }
-            DesignUserControl.ApplyDesign(this);
-            DesignUserControl.ApplyMenu(this);
+            //DesignUserControl.ApplyDesign(this);
+            //DesignUserControl.ApplyMenu(this);
         }
 
 
@@ -111,5 +119,44 @@ namespace Comp
                 adress = System.IO.Path.GetFileName(adress);
             }
         }
+
+        #region Поиск и обновление цены
+        public static void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            WebBrowser webbrowser = (WebBrowser)sender;
+            string sReadData = webbrowser.Document.Body.InnerHtml;
+
+            string[] parts = sReadData.Split(new char[] { '\n' });
+
+            string name = parts[1].Substring(4);
+            string kod = parts[89].Substring(5);
+            string price = parts[93].Substring(1);
+            int pos1 = price.IndexOf(" ");
+            int pos2 = price.IndexOf(" ", pos1 + 1);
+            price = price.Substring(0, pos2);
+            int currentprice = Convert.ToInt32(price.Replace(" ", ""));
+
+            SQLClass.Update("UPDATE level2 SET Name = '" + name + "', Price = " + currentprice + " WHERE kod = '" + kod + "'");
+
+            MessageBox.Show("OK");
+        }
+
+        /// <summary>
+        /// Поиск цены
+        /// </summary>
+        public static void Prices()
+        {
+            WebBrowser wb = new WebBrowser();
+            wb.DocumentCompleted += webBrowser1_DocumentCompleted;
+            wb.Navigate("https://sbermegamarket.ru/catalog/details/processor-intel-core-i5-12400f-lga-1700-oem-100031046210/#?related_search=процессор%20i5%2012400f");
+        }
+
+        private void Refresh(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            Prices();
+        }
+
+        #endregion
     }
 }

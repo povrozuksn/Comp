@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 30 2023 г., 18:41
+-- Время создания: Апр 27 2023 г., 20:28
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -38,12 +38,14 @@ CREATE TABLE IF NOT EXISTS `blockdesign` (
 --
 
 INSERT INTO `blockdesign` (`name`, `form`, `parameter`, `value`) VALUES
-('treeView1', 'tableLayoutPanel1', 'WIDTH', '300'),
-('treeView1', 'tableLayoutPanel1', 'HEIGHT', '600'),
-('CopyRightPanel', 'CopyRightPanel', 'WIDTH', '1155'),
-('CopyRightPanel', 'CopyRightPanel', 'HEIGHT', '40'),
 ('AuthPanel', 'AuthPanel', 'WIDTH', '1155'),
-('AuthPanel', 'AuthPanel', 'HEIGHT', '70');
+('AuthPanel', 'AuthPanel', 'HEIGHT', '55'),
+('treeView1', 'tableLayoutPanel1', 'WIDTH', '300'),
+('treeView1', 'tableLayoutPanel1', 'HEIGHT', '493'),
+('CopyRightUserControl', 'CopyRightUserControl', 'WIDTH', '1447'),
+('CopyRightUserControl', 'CopyRightUserControl', 'HEIGHT', '40'),
+('CopyRightUserControl', 'CopyRightUserControl', 'VK', '1'),
+('CopyRightUserControl', 'CopyRightUserControl', 'WWW', '1');
 
 -- --------------------------------------------------------
 
@@ -144,6 +146,8 @@ CREATE TABLE IF NOT EXISTS `level2` (
   `Specs` varchar(400) NOT NULL,
   `Quantity` int(11) NOT NULL,
   `Price` int(11) NOT NULL,
+  `kod` varchar(20) NOT NULL,
+  `link` varchar(300) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
@@ -151,19 +155,19 @@ CREATE TABLE IF NOT EXISTS `level2` (
 -- Дамп данных таблицы `level2`
 --
 
-INSERT INTO `level2` (`ID`, `id_main`, `id_level1`, `Name`, `Image`, `Specs`, `Quantity`, `Price`) VALUES
-(1, 1, 1, 'процессор i5 12400f', 'DSF201.jpg', '', 0, 0),
-(2, 4, 7, 'Aceline WM-907BU', 'Aceline WM-907BU.jpg', '', 10, 299),
-(4, 4, 7, 'Defender Hit MM-495', 'Defender Hit MM-495.jpg', '', 10, 299),
-(5, 4, 7, 'Gembird MUSW-111-GRN зеленый', 'Gembird MUSW-111-GRN зеленый.jpg', '', 10, 299),
-(6, 4, 7, 'Gembird MUSW-265', 'Gembird MUSW-265.jpg', '', 10, 299),
-(8, 1, 1, 'ASRock H510M-HVS', 'ASRock H510M-HVS.jpg', '', 12, 5200),
-(9, 1, 1, 'GIGABYTE GeForce RTX 3050 EAGLE', 'GIGABYTE GeForce RTX 3050 EAGLE.jpg', '', 2, 25999),
-(10, 1, 1, 'Patriot Signature Line', 'Patriot Signature Line.jpg', '', 1, 2999),
-(11, 1, 1, '240 ГБ 2.5" SATA накопитель Kingston A400', '240 ГБ 2.5 SATA Kingston A400.jpg', '', 1, 1750),
-(12, 1, 5, 'Intel Core i3-10105F', 'Intel Core i3-10105F.jpg', '', 2, 5599),
-(13, 1, 5, 'GIGABYTE H470M K', 'GIGABYTE H470M K.jpg', '', 2, 5199),
-(14, 1, 5, 'MSI GeForce GTX 1630 VENTUS XS', 'MSI GeForce GTX 1630 VENTUS XS.jpg', '', 5, 12999);
+INSERT INTO `level2` (`ID`, `id_main`, `id_level1`, `Name`, `Image`, `Specs`, `Quantity`, `Price`, `kod`, `link`) VALUES
+(1, 1, 1, 'Процессор Intel Core i5 12400F OEM', 'DSF201.jpg', '', 1, 15600, '100031046210', ''),
+(2, 4, 7, 'Aceline WM-907BU', 'Aceline WM-907BU.jpg', '', 10, 299, '', ''),
+(4, 4, 7, 'Defender Hit MM-495', 'Defender Hit MM-495.jpg', '', 10, 299, '', ''),
+(5, 4, 7, 'Gembird MUSW-111-GRN зеленый', 'Gembird MUSW-111-GRN зеленый.jpg', '', 10, 299, '', ''),
+(6, 4, 7, 'Gembird MUSW-265', 'Gembird MUSW-265.jpg', '', 10, 299, '', ''),
+(8, 1, 1, 'ASRock H510M-HVS', 'ASRock H510M-HVS.jpg', '', 12, 5200, '', ''),
+(9, 1, 1, 'GIGABYTE GeForce RTX 3050 EAGLE', 'GIGABYTE GeForce RTX 3050 EAGLE.jpg', '', 2, 25999, '', ''),
+(10, 1, 1, 'Patriot Signature Line', 'Patriot Signature Line.jpg', '', 1, 2999, '', ''),
+(11, 1, 1, '240 ГБ 2.5" SATA накопитель Kingston A400', '240 ГБ 2.5 SATA Kingston A400.jpg', '', 1, 1750, '', ''),
+(12, 1, 5, 'Intel Core i3-10105F', 'Intel Core i3-10105F.jpg', '', 2, 5599, '', ''),
+(13, 1, 5, 'GIGABYTE H470M K', 'GIGABYTE H470M K.jpg', '', 2, 5199, '', ''),
+(14, 1, 5, 'MSI GeForce GTX 1630 VENTUS XS', 'MSI GeForce GTX 1630 VENTUS XS.jpg', '', 5, 12999, '', '');
 
 -- --------------------------------------------------------
 
@@ -221,7 +225,9 @@ INSERT INTO `uniquedesign` (`type`, `name`, `form`, `parameter`, `value`) VALUES
 ('System.Windows.Forms.Button', 'DesignButton', 'MainForm', 'ADMIN', '1'),
 ('System.Windows.Forms.Button', 'AccountButton', 'MainForm', 'ADMIN', '0'),
 ('System.Windows.Forms.Label', 'HelloLabel', 'MainForm', 'FONT', 'Arial Narrow;14,25'),
-('System.Windows.Forms.Label', 'HelloLabel', 'MainForm', 'FONT_COLOR', '-65536');
+('System.Windows.Forms.Label', 'HelloLabel', 'MainForm', 'FONT_COLOR', '-65536'),
+('System.Windows.Forms.Label', 'label1', 'MainForm', 'FONT', 'Times New Roman;12'),
+('System.Windows.Forms.Label', 'label1', 'MainForm', 'FONT_COLOR', '-65536');
 
 -- --------------------------------------------------------
 

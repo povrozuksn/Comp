@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -46,6 +47,8 @@ namespace Comp
 
             APIClass.Weather();
             WeatherLabel.Text = "Погода: " + APIClass.temper + " C";
+
+            //APIClass.Prices();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
