@@ -41,11 +41,11 @@ namespace Comp
 
         private void RedLeve2UserControl_Load(object sender, EventArgs e)
         {
-            List<string> list = SQLClass.Select("SELECT ID, id_main, id_level1, Name FROM level2");
+            List<string> list = SQLClass.Select("SELECT ID, id_main, id_level1, Name, kod FROM level2");
 
             panel1.Controls.Clear();
             int y = 10;
-            for (int i = 0; i < list.Count; i += 4)
+            for (int i = 0; i < list.Count; i += 5)
             {
                 Label lbl0 = new Label();
                 lbl0.Location = new Point(50, y);
@@ -83,6 +83,7 @@ namespace Comp
                 btn1.Font = new Font("Microsoft Sans Serif", 12);
                 btn1.Click += new EventHandler(Refresh);
                 btn1.Text = "Обновить";
+                btn1.Tag = list[i+4];
                 panel1.Controls.Add(btn1);
 
                 y += 35;
@@ -126,10 +127,16 @@ namespace Comp
             WebBrowser webbrowser = (WebBrowser)sender;
             string sReadData = webbrowser.Document.Body.InnerHtml;
 
+            //Поиск имени
             string[] parts = sReadData.Split(new char[] { '\n' });
-
             string name = parts[1].Substring(4);
-            string kod = parts[89].Substring(5);
+
+            //Поиск цены
+            for(int i=0; i<parts.Length; i++)
+            {
+                string[] parts1 = parts[i].Split(new string[] { "meta content" }, StringSplitOptions.None);
+            }
+            /*
             string price = parts[93].Substring(1);
             int pos1 = price.IndexOf(" ");
             int pos2 = price.IndexOf(" ", pos1 + 1);
@@ -137,24 +144,29 @@ namespace Comp
             int currentprice = Convert.ToInt32(price.Replace(" ", ""));
 
             SQLClass.Update("UPDATE level2 SET Name = '" + name + "', Price = " + currentprice + " WHERE kod = '" + kod + "'");
-
+            */
             MessageBox.Show("OK");
         }
 
         /// <summary>
         /// Поиск цены
         /// </summary>
-        public static void Prices()
+        public static void Prices(string kod)
         {
-            WebBrowser wb = new WebBrowser();
-            wb.DocumentCompleted += webBrowser1_DocumentCompleted;
-            wb.Navigate("https://sbermegamarket.ru/catalog/details/processor-intel-core-i5-12400f-lga-1700-oem-100031046210/#?related_search=процессор%20i5%2012400f");
+            string link = SQLClass.Select("SELECT link FROM level2 WHERE kod = '" + kod + "'")[0];
+
+            if (link != "")
+            {
+                WebBrowser wb = new WebBrowser();
+                wb.DocumentCompleted += webBrowser1_DocumentCompleted;
+                wb.Navigate(link);
+            }
         }
 
         private void Refresh(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            Prices();
+            Prices(button.Tag.ToString());
         }
 
         #endregion
