@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LabelLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.LabelLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +50,15 @@
             this.panel1.Size = new System.Drawing.Size(840, 466);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // LabelLabel
+            // 
+            this.LabelLabel.AutoSize = true;
+            this.LabelLabel.Location = new System.Drawing.Point(17, 266);
+            this.LabelLabel.Name = "LabelLabel";
+            this.LabelLabel.Size = new System.Drawing.Size(104, 25);
+            this.LabelLabel.TabIndex = 4;
+            this.LabelLabel.Text = "Цена, руб.";
             // 
             // PriceLabel
             // 
@@ -88,15 +97,6 @@
             this.NameLabel.TabIndex = 0;
             this.NameLabel.Text = "Nane";
             // 
-            // LabelLabel
-            // 
-            this.LabelLabel.AutoSize = true;
-            this.LabelLabel.Location = new System.Drawing.Point(17, 266);
-            this.LabelLabel.Name = "LabelLabel";
-            this.LabelLabel.Size = new System.Drawing.Size(104, 25);
-            this.LabelLabel.TabIndex = 4;
-            this.LabelLabel.Text = "Цена, руб.";
-            // 
             // Level2UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -105,7 +105,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Level2UserControl";
-            this.Size = new System.Drawing.Size(871, 496);
+            this.Size = new System.Drawing.Size(800, 496);
             this.Load += new System.EventHandler(this.Level2UserControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

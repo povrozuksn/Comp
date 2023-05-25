@@ -64,6 +64,7 @@
             // 
             this.AuthPanel.AccessibleDescription = "block";
             this.AuthPanel.ContextMenuStrip = this.BlockCMS;
+            this.AuthPanel.Controls.Add(this.DesignButton);
             this.AuthPanel.Controls.Add(this.HelloLabel);
             this.AuthPanel.Controls.Add(this.AccountButton);
             this.AuthPanel.Controls.Add(this.label5);
@@ -72,12 +73,11 @@
             this.AuthPanel.Controls.Add(this.PaswTextBox);
             this.AuthPanel.Controls.Add(this.label4);
             this.AuthPanel.Controls.Add(this.AdminPanelButton);
-            this.AuthPanel.Controls.Add(this.DesignButton);
             this.AuthPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.AuthPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AuthPanel.Location = new System.Drawing.Point(0, 0);
             this.AuthPanel.Name = "AuthPanel";
-            this.AuthPanel.Size = new System.Drawing.Size(1924, 68);
+            this.AuthPanel.Size = new System.Drawing.Size(1782, 68);
             this.AuthPanel.TabIndex = 0;
             // 
             // BlockCMS
@@ -107,7 +107,7 @@
             // AccountButton
             // 
             this.AccountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AccountButton.Location = new System.Drawing.Point(1281, 17);
+            this.AccountButton.Location = new System.Drawing.Point(1281, 15);
             this.AccountButton.Name = "AccountButton";
             this.AccountButton.Size = new System.Drawing.Size(191, 33);
             this.AccountButton.TabIndex = 21;
@@ -120,7 +120,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(409, 20);
+            this.label5.Location = new System.Drawing.Point(423, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(161, 25);
             this.label5.TabIndex = 17;
@@ -129,7 +129,7 @@
             // AuthButton
             // 
             this.AuthButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AuthButton.Location = new System.Drawing.Point(834, 17);
+            this.AuthButton.Location = new System.Drawing.Point(829, 15);
             this.AuthButton.Name = "AuthButton";
             this.AuthButton.Size = new System.Drawing.Size(111, 32);
             this.AuthButton.TabIndex = 20;
@@ -140,7 +140,7 @@
             // LoginTextBox
             // 
             this.LoginTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LoginTextBox.Location = new System.Drawing.Point(182, 17);
+            this.LoginTextBox.Location = new System.Drawing.Point(176, 15);
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.Size = new System.Drawing.Size(221, 30);
             this.LoginTextBox.TabIndex = 18;
@@ -148,7 +148,7 @@
             // PaswTextBox
             // 
             this.PaswTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PaswTextBox.Location = new System.Drawing.Point(590, 17);
+            this.PaswTextBox.Location = new System.Drawing.Point(590, 15);
             this.PaswTextBox.Name = "PaswTextBox";
             this.PaswTextBox.Size = new System.Drawing.Size(221, 30);
             this.PaswTextBox.TabIndex = 19;
@@ -158,7 +158,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(13, 24);
+            this.label4.Location = new System.Drawing.Point(21, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 25);
             this.label4.TabIndex = 16;
@@ -167,7 +167,7 @@
             // AdminPanelButton
             // 
             this.AdminPanelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdminPanelButton.Location = new System.Drawing.Point(970, 17);
+            this.AdminPanelButton.Location = new System.Drawing.Point(970, 15);
             this.AdminPanelButton.Name = "AdminPanelButton";
             this.AdminPanelButton.Size = new System.Drawing.Size(296, 33);
             this.AdminPanelButton.TabIndex = 15;
@@ -179,7 +179,7 @@
             // DesignButton
             // 
             this.DesignButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DesignButton.Location = new System.Drawing.Point(415, 16);
+            this.DesignButton.Location = new System.Drawing.Point(1489, 15);
             this.DesignButton.Name = "DesignButton";
             this.DesignButton.Size = new System.Drawing.Size(155, 33);
             this.DesignButton.TabIndex = 23;
@@ -267,7 +267,7 @@
             this.CopyRightPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CopyRightPanel.Location = new System.Drawing.Point(0, 644);
             this.CopyRightPanel.Name = "CopyRightPanel";
-            this.CopyRightPanel.Size = new System.Drawing.Size(1924, 35);
+            this.CopyRightPanel.Size = new System.Drawing.Size(1782, 35);
             this.CopyRightPanel.TabIndex = 3;
             // 
             // comboBox1
@@ -299,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 679);
+            this.ClientSize = new System.Drawing.Size(1782, 679);
             this.Controls.Add(this.WeatherLabel);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.CopyRightPanel);

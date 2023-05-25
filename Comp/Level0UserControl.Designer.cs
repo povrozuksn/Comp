@@ -42,7 +42,7 @@
             this.Level1Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Level1Panel.Location = new System.Drawing.Point(0, 215);
             this.Level1Panel.Name = "Level1Panel";
-            this.Level1Panel.Size = new System.Drawing.Size(1000, 385);
+            this.Level1Panel.Size = new System.Drawing.Size(700, 385);
             this.Level1Panel.TabIndex = 5;
             // 
             // Level0Panel
@@ -52,7 +52,7 @@
             this.Level0Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Level0Panel.Location = new System.Drawing.Point(0, 0);
             this.Level0Panel.Name = "Level0Panel";
-            this.Level0Panel.Size = new System.Drawing.Size(1000, 209);
+            this.Level0Panel.Size = new System.Drawing.Size(700, 209);
             this.Level0Panel.TabIndex = 4;
             this.Level0Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Level0Panel_Paint);
             // 
@@ -84,7 +84,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Level0UserControl";
-            this.Size = new System.Drawing.Size(1000, 600);
+            this.Size = new System.Drawing.Size(700, 600);
             this.Load += new System.EventHandler(this.Level0UserControl_Load);
             this.Level0Panel.ResumeLayout(false);
             this.Level0Panel.PerformLayout();

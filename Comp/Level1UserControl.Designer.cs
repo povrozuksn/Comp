@@ -30,10 +30,10 @@
         {
             this.Level1Panel = new System.Windows.Forms.Panel();
             this.Level0Panel = new System.Windows.Forms.Panel();
+            this.LabelLabel = new System.Windows.Forms.Label();
+            this.PriceLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PriceLabel = new System.Windows.Forms.Label();
-            this.LabelLabel = new System.Windows.Forms.Label();
             this.Level0Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,7 @@
             this.Level1Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Level1Panel.Location = new System.Drawing.Point(0, 215);
             this.Level1Panel.Name = "Level1Panel";
-            this.Level1Panel.Size = new System.Drawing.Size(1000, 385);
+            this.Level1Panel.Size = new System.Drawing.Size(700, 385);
             this.Level1Panel.TabIndex = 3;
             // 
             // Level0Panel
@@ -56,9 +56,27 @@
             this.Level0Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Level0Panel.Location = new System.Drawing.Point(0, 0);
             this.Level0Panel.Name = "Level0Panel";
-            this.Level0Panel.Size = new System.Drawing.Size(1000, 209);
+            this.Level0Panel.Size = new System.Drawing.Size(700, 209);
             this.Level0Panel.TabIndex = 2;
             this.Level0Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Level0Panel_Paint);
+            // 
+            // LabelLabel
+            // 
+            this.LabelLabel.AutoSize = true;
+            this.LabelLabel.Location = new System.Drawing.Point(277, 53);
+            this.LabelLabel.Name = "LabelLabel";
+            this.LabelLabel.Size = new System.Drawing.Size(104, 25);
+            this.LabelLabel.TabIndex = 3;
+            this.LabelLabel.Text = "Цена, руб.";
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Location = new System.Drawing.Point(406, 53);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(64, 25);
+            this.PriceLabel.TabIndex = 2;
+            this.PriceLabel.Text = "label2";
             // 
             // label1
             // 
@@ -79,24 +97,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // PriceLabel
-            // 
-            this.PriceLabel.AutoSize = true;
-            this.PriceLabel.Location = new System.Drawing.Point(406, 53);
-            this.PriceLabel.Name = "PriceLabel";
-            this.PriceLabel.Size = new System.Drawing.Size(64, 25);
-            this.PriceLabel.TabIndex = 2;
-            this.PriceLabel.Text = "label2";
-            // 
-            // LabelLabel
-            // 
-            this.LabelLabel.AutoSize = true;
-            this.LabelLabel.Location = new System.Drawing.Point(277, 53);
-            this.LabelLabel.Name = "LabelLabel";
-            this.LabelLabel.Size = new System.Drawing.Size(104, 25);
-            this.LabelLabel.TabIndex = 3;
-            this.LabelLabel.Text = "Цена, руб.";
-            // 
             // Level1UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -106,7 +106,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Level1UserControl";
-            this.Size = new System.Drawing.Size(1000, 600);
+            this.Size = new System.Drawing.Size(700, 600);
             this.Load += new System.EventHandler(this.Level1UserControl_Load);
             this.Level0Panel.ResumeLayout(false);
             this.Level0Panel.PerformLayout();

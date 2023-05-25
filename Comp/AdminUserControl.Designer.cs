@@ -89,7 +89,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AdminUserControl";
-            this.Size = new System.Drawing.Size(770, 500);
+            this.Size = new System.Drawing.Size(700, 500);
             this.Load += new System.EventHandler(this.AdminUserControl_Load);
             this.ResumeLayout(false);
 

@@ -16,7 +16,7 @@ namespace Comp
         {
             InitializeComponent();
             FindButton_Click(null, null);
-            List<string> cities = SQLClass.Select("SELECT Name FROM cities ORDER BY Name");
+            List<string> cities = SQLClass.Select("SELECT Name FROM " + SQLClass.CITIES + " ORDER BY Name");
             CityComboBox.Items.Clear();
             CityComboBox.Items.Add("");
             foreach (string city in cities)
@@ -32,7 +32,7 @@ namespace Comp
 
         private void FindButton_Click(object sender, EventArgs e)
         {
-            string command = "SELECT Name, Surname, City, Age FROM users WHERE 1";
+            string command = "SELECT Name, Surname, City, Age FROM " + SQLClass.USERS + " WHERE 1";
             if (CityComboBox.Text != "")
                 command += " AND City = '" + CityComboBox.Text + "'";
             if (AgeTextBox.Text != "")

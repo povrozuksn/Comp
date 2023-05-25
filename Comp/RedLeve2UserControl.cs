@@ -16,7 +16,7 @@ namespace Comp
         {
             InitializeComponent();
 
-            List<string> level1_list = SQLClass.Select("SELECT ID, id_main, Name FROM level1");
+            List<string> level1_list = SQLClass.Select("SELECT ID, id_main, Name FROM " + SQLClass.LEVEL1);
 
             comboBox1.Items.Clear();
             for(int i=0; i< level1_list.Count; i+=3)
@@ -31,7 +31,7 @@ namespace Comp
         {
             string[] parts = comboBox1.Text.Split(new char[] { ',' });
 
-            SQLClass.Update("INSERT INTO level2 (id_main, id_level1, Name, Image, Quantity, Price)" +
+            SQLClass.Update("INSERT INTO " + SQLClass.LEVEL2 + " (id_main, id_level1, Name, Image, Quantity, Price)" +
                               "VALUES('" + parts[1] + "', '" + parts[0] + "', '" +  NameTextBox.Text + "', '" + adress + "', '" + QuantityTextBox.Text +  "', '" + PriceTextBox.Text + "')");
 
             MessageBox.Show("Сохранено");
@@ -41,7 +41,7 @@ namespace Comp
 
         private void RedLeve2UserControl_Load(object sender, EventArgs e)
         {
-            List<string> list = SQLClass.Select("SELECT ID, id_main, id_level1, Name, kod FROM level2");
+            List<string> list = SQLClass.Select("SELECT ID, id_main, id_level1, Name, kod FROM " + SQLClass.LEVEL2);
 
             panel1.Controls.Clear();
             int y = 10;
@@ -102,7 +102,7 @@ namespace Comp
             {
                 if (control.Location == new Point(50, y))
                 {
-                    SQLClass.Update("DELETE FROM level2 WHERE ID = '" + control.Tag + "'");
+                    SQLClass.Update("DELETE FROM " + SQLClass.LEVEL2 + " WHERE ID = '" + control.Tag + "'");
                     RedLeve2UserControl_Load(sender, e);
                     return;
                 }
@@ -130,22 +130,23 @@ namespace Comp
             //Поиск имени
             string[] parts = sReadData.Split(new char[] { '\n' });
             string name = parts[1].Substring(4);
-
+            //Поиск кода
+            string kod = parts[3].Substring(15).Replace(" ", "");
             //Поиск цены
-            for(int i=0; i<parts.Length; i++)
+            string PricePart = "";
+            for(int i = 0; i < parts.Length; i++)
             {
-                string[] parts1 = parts[i].Split(new string[] { "meta content" }, StringSplitOptions.None);
+                if(parts[i].Contains("RUB")) PricePart = parts[i];
             }
-            /*
-            string price = parts[93].Substring(1);
-            int pos1 = price.IndexOf(" ");
-            int pos2 = price.IndexOf(" ", pos1 + 1);
-            price = price.Substring(0, pos2);
-            int currentprice = Convert.ToInt32(price.Replace(" ", ""));
-
-            SQLClass.Update("UPDATE level2 SET Name = '" + name + "', Price = " + currentprice + " WHERE kod = '" + kod + "'");
-            */
+            int pos1 = PricePart.IndexOf('"');
+            int pos2 = PricePart.IndexOf('"', pos1 + 1);
+            PricePart = PricePart.Substring(pos1+1, pos2-(pos1+1));
+            int currentprice = Convert.ToInt32(PricePart);
+            
+            SQLClass.Update("UPDATE " + SQLClass.LEVEL2 + " SET Name = '" + name + "', Price = " + currentprice + " WHERE kod = '" + kod + "'");
+            
             MessageBox.Show("OK");
+            webbrowser.Dispose();
         }
 
         /// <summary>
@@ -153,11 +154,12 @@ namespace Comp
         /// </summary>
         public static void Prices(string kod)
         {
-            string link = SQLClass.Select("SELECT link FROM level2 WHERE kod = '" + kod + "'")[0];
+            string link = SQLClass.Select("SELECT link FROM " + SQLClass.LEVEL2 + " WHERE kod = '" + kod + "'")[0];
 
             if (link != "")
             {
                 WebBrowser wb = new WebBrowser();
+                wb.ScriptErrorsSuppressed = true;
                 wb.DocumentCompleted += webBrowser1_DocumentCompleted;
                 wb.Navigate(link);
             }

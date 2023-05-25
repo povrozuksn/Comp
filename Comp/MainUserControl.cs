@@ -16,7 +16,7 @@ namespace Comp
         {
             InitializeComponent();
 
-            List<string> comps = SQLClass.Select("SELECT ID, Name, Image FROM main");
+            List<string> comps = SQLClass.Select("SELECT ID, Name, Image FROM " + SQLClass.MAIN);
             CompsPanel.Controls.Clear();
             CompsPanel.Controls.Add(label1);
             int x = 40;

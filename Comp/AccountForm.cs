@@ -16,8 +16,8 @@ namespace Comp
         {
             InitializeComponent();
 
-            List<string> user_date = SQLClass.Select("SELECT Name, Surname, City, Age, Login, Password, Email FROM users WHERE Login = '" + MainForm.Login + "'");
-            List<string> cities = SQLClass.Select("SELECT Name FROM cities");
+            List<string> user_date = SQLClass.Select("SELECT Name, Surname, City, Age, Login, Password, Email FROM " + SQLClass.USERS + " WHERE Login = '" + MainForm.Login + "'");
+            List<string> cities = SQLClass.Select("SELECT Name FROM " + SQLClass.CITIES);
 
             NameTextBox.Text = user_date[0];
             SurnameTextBox.Text = user_date[1];
@@ -37,7 +37,7 @@ namespace Comp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLClass.Update("UPDATE users SET Name='" + NameTextBox.Text + "' , Surname='" + SurnameTextBox.Text + "' , City='" + CityComboBox.Text + "' , Age='" + AgeTextBox.Text + "' , Login='" + LoginTextBox.Text + "' , Password='" + PasTextBox.Text + "' , Email='" + EmailTextBox.Text + "' WHERE Login ='" + MainForm.Login + "'");
+            SQLClass.Update("UPDATE " + SQLClass.USERS + " SET Name='" + NameTextBox.Text + "' , Surname='" + SurnameTextBox.Text + "' , City='" + CityComboBox.Text + "' , Age='" + AgeTextBox.Text + "' , Login='" + LoginTextBox.Text + "' , Password='" + PasTextBox.Text + "' , Email='" + EmailTextBox.Text + "' WHERE Login ='" + MainForm.Login + "'");
 
             MainForm.Login = LoginTextBox.Text;
             MessageBox.Show("Сохранено");

@@ -16,8 +16,8 @@ namespace Comp
         {
             InitializeComponent();
 
-            List<string> comps = SQLClass.Select("SELECT ID, Name, Image FROM main WHERE ID = '" + id_main + "'");
-            List<string> lev1 = SQLClass.Select("SELECT ID, id_main, Name, Image, Specs, Quantity, Price FROM level1 WHERE id_main = '" + id_main + "'");
+            List<string> comps = SQLClass.Select("SELECT ID, Name, Image FROM " + SQLClass.MAIN + " WHERE ID = '" + id_main + "'");
+            List<string> lev1 = SQLClass.Select("SELECT ID, id_main, Name, Image, Specs, Quantity, Price FROM " + SQLClass.LEVEL1 + " WHERE id_main = '" + id_main + "'");
 
             Text = comps[1];
             label1.Text = comps[1];

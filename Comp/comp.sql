@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Апр 27 2023 г., 20:28
+-- Время создания: Май 18 2023 г., 19:14
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -92,13 +92,13 @@ CREATE TABLE IF NOT EXISTS `defaultdesign` (
 
 INSERT INTO `defaultdesign` (`type`, `parameter`, `value`) VALUES
 ('System.Windows.Forms.Button', 'COLOR', '-8323073'),
-('System.Windows.Forms.Label', 'FONT', 'Times New Roman;12'),
-('System.Windows.Forms.Label', 'FONT_COLOR', '-65281'),
 ('System.Windows.Forms.Button', 'FONT', 'Times New Roman;14,25'),
 ('System.Windows.Forms.Button', 'FONT_COLOR', '-65536'),
 ('System.Windows.Forms.TextBox', 'FONT', 'Times New Roman;12'),
 ('System.Windows.Forms.TextBox', 'FONT_COLOR', '-65536'),
-('System.Windows.Forms.Panel', 'COLOR', '-65');
+('System.Windows.Forms.Panel', 'COLOR', '-65'),
+('System.Windows.Forms.Label', 'FONT', 'Times New Roman;11,25'),
+('System.Windows.Forms.Label', 'FONT_COLOR', '-65536');
 
 -- --------------------------------------------------------
 
@@ -156,18 +156,18 @@ CREATE TABLE IF NOT EXISTS `level2` (
 --
 
 INSERT INTO `level2` (`ID`, `id_main`, `id_level1`, `Name`, `Image`, `Specs`, `Quantity`, `Price`, `kod`, `link`) VALUES
-(1, 1, 1, 'Процессор Intel Core i5 12400F OEM', 'DSF201.jpg', '', 1, 15600, '100031046210', ''),
+(1, 1, 1, 'Процессор Intel Core i5 12400F OEM', 'DSF201.jpg', '', 1, 14720, '100031046210', 'https://sbermegamarket.ru/catalog/details/processor-intel-core-i5-12400f-lga-1700-oem-100031046210/#?related_search=процессор%20i5%2012400f'),
 (2, 4, 7, 'Aceline WM-907BU', 'Aceline WM-907BU.jpg', '', 10, 299, '', ''),
 (4, 4, 7, 'Defender Hit MM-495', 'Defender Hit MM-495.jpg', '', 10, 299, '', ''),
 (5, 4, 7, 'Gembird MUSW-111-GRN зеленый', 'Gembird MUSW-111-GRN зеленый.jpg', '', 10, 299, '', ''),
 (6, 4, 7, 'Gembird MUSW-265', 'Gembird MUSW-265.jpg', '', 10, 299, '', ''),
-(8, 1, 1, 'ASRock H510M-HVS', 'ASRock H510M-HVS.jpg', '', 12, 5200, '', ''),
-(9, 1, 1, 'GIGABYTE GeForce RTX 3050 EAGLE', 'GIGABYTE GeForce RTX 3050 EAGLE.jpg', '', 2, 25999, '', ''),
+(8, 1, 1, 'Материнская плата ASRock H510M-HVS R2.0', 'ASRock H510M-HVS.jpg', '', 12, 5890, '100029766987', 'https://sbermegamarket.ru/catalog/details/materinskaya-plata-asrock-h510m-hvs-r20-100029766987/#?related_search=материнские%20платы%20asrock%20h510m-hvs%20r2.0'),
+(9, 1, 1, 'Видеокарта GIGABYTE NVIDIA GeForce RTX 3050 EAGLE OC (GV-N3050EAGLE OC-8GD)', 'GIGABYTE GeForce RTX 3050 EAGLE.jpg', '', 2, 28401, '100030990733', 'https://sbermegamarket.ru/catalog/details/videokarta-gigabyte-nvidia-geforce-rtx-3050-1361996-100030990733/#?related_search=gigabyte%20geforce%20rtx%203050%20eagle'),
 (10, 1, 1, 'Patriot Signature Line', 'Patriot Signature Line.jpg', '', 1, 2999, '', ''),
 (11, 1, 1, '240 ГБ 2.5" SATA накопитель Kingston A400', '240 ГБ 2.5 SATA Kingston A400.jpg', '', 1, 1750, '', ''),
 (12, 1, 5, 'Intel Core i3-10105F', 'Intel Core i3-10105F.jpg', '', 2, 5599, '', ''),
 (13, 1, 5, 'GIGABYTE H470M K', 'GIGABYTE H470M K.jpg', '', 2, 5199, '', ''),
-(14, 1, 5, 'MSI GeForce GTX 1630 VENTUS XS', 'MSI GeForce GTX 1630 VENTUS XS.jpg', '', 5, 12999, '', '');
+(14, 1, 5, 'Видеокарта MSI NVIDIA GeForce GTX 1630 VENTUS XS 4G OC', 'MSI GeForce GTX 1630 VENTUS XS.jpg', '', 5, 14246, '600008937393', 'https://sbermegamarket.ru/catalog/details/videokarta-msi-nvidia-geforce-gtx-1630-602-v809-2669s-600008937393/#?related_search=msi%20geforce%20gtx%201630%20ventus%20xs');
 
 -- --------------------------------------------------------
 
@@ -216,18 +216,19 @@ INSERT INTO `uniquedesign` (`type`, `name`, `form`, `parameter`, `value`) VALUES
 ('System.Windows.Forms.Button', 'AccountButton', 'MainForm', 'FONT_COLOR', '-16744448'),
 ('System.Windows.Forms.Button', 'AuthButton', 'MainForm', 'LOCATION', '626, 15'),
 ('System.Windows.Forms.Button', 'AuthButton', 'MainForm', 'SIZE', '83, 30'),
-('System.Windows.Forms.Button', 'AdminPanelButton', 'MainForm', 'LOCATION', '728, 15'),
-('System.Windows.Forms.Button', 'AdminPanelButton', 'MainForm', 'SIZE', '222, 30'),
 ('System.Windows.Forms.Button', 'AccountButton', 'MainForm', 'LOCATION', '960, 15'),
 ('System.Windows.Forms.Button', 'AccountButton', 'MainForm', 'SIZE', '150, 30'),
-('System.Windows.Forms.Button', 'DesignButton', 'MainForm', 'LOCATION', '1115, 15'),
-('System.Windows.Forms.Button', 'DesignButton', 'MainForm', 'SIZE', '116, 30'),
-('System.Windows.Forms.Button', 'DesignButton', 'MainForm', 'ADMIN', '1'),
 ('System.Windows.Forms.Button', 'AccountButton', 'MainForm', 'ADMIN', '0'),
 ('System.Windows.Forms.Label', 'HelloLabel', 'MainForm', 'FONT', 'Arial Narrow;14,25'),
 ('System.Windows.Forms.Label', 'HelloLabel', 'MainForm', 'FONT_COLOR', '-65536'),
 ('System.Windows.Forms.Label', 'label1', 'MainForm', 'FONT', 'Times New Roman;12'),
-('System.Windows.Forms.Label', 'label1', 'MainForm', 'FONT_COLOR', '-65536');
+('System.Windows.Forms.Label', 'label1', 'MainForm', 'FONT_COLOR', '-65536'),
+('System.Windows.Forms.Button', 'DesignButton', 'MainForm', 'LOCATION', '400, 15'),
+('System.Windows.Forms.Button', 'DesignButton', 'MainForm', 'SIZE', '116, 30'),
+('System.Windows.Forms.Button', 'AdminPanelButton', 'MainForm', 'ADMIN', '1'),
+('System.Windows.Forms.Button', 'AdminPanelButton', 'MainForm', 'LOCATION', '728, 15'),
+('System.Windows.Forms.Button', 'AdminPanelButton', 'MainForm', 'SIZE', '222, 30'),
+('System.Windows.Forms.Button', 'DesignButton', 'MainForm', 'ADMIN', '1');
 
 -- --------------------------------------------------------
 

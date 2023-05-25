@@ -22,7 +22,7 @@ namespace Comp
 
         private void button2_Click(object sender, EventArgs e)
         {
-           SQLClass.Update("INSERT INTO level1 (Name, Image)" +
+           SQLClass.Update("INSERT INTO" + SQLClass.LEVEL1 + "(Name, Image)" +
                               "VALUES('" + NameTextBox.Text + "', '" + adress + "')");
 
             MessageBox.Show("Сохранено");
@@ -32,7 +32,7 @@ namespace Comp
 
         private void RedLeve0UserControl_Load(object sender, EventArgs e)
         {
-            List<string> list = SQLClass.Select("SELECT ID, Name FROM main");
+            List<string> list = SQLClass.Select("SELECT ID, Name FROM " + SQLClass.MAIN);
 
             panel1.Controls.Clear();
             int y = 10;

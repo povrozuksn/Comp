@@ -41,11 +41,11 @@ namespace Comp
 
                 UniqueDisignLabelForm_Load(null, null);
 
-                SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + label1.GetType() + "' AND name = '" + lbl.Name + "' AND form = '" + lbl.FindForm().Name + "' AND parameter = 'FONT'");
-                SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + label1.GetType() + "' AND name = '" + lbl.Name + "' AND form = '" + lbl.FindForm().Name + "' AND parameter = 'FONT_COLOR'");
+                SQLClass.Update("DELETE FROM " + SQLClass.UNIQUE_DESIGN + " WHERE type = '" + label1.GetType() + "' AND name = '" + lbl.Name + "' AND form = '" + lbl.FindForm().Name + "' AND parameter = 'FONT'");
+                SQLClass.Update("DELETE FROM " + SQLClass.UNIQUE_DESIGN + " WHERE type = '" + label1.GetType() + "' AND name = '" + lbl.Name + "' AND form = '" + lbl.FindForm().Name + "' AND parameter = 'FONT_COLOR'");
 
-                SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + label1.GetType() + "', '" + lbl.Name + "', '" + lbl.FindForm().Name + "', 'FONT', '" + label1.Font.Name + ";" + label1.Font.Size.ToString() + "')");
-                SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + label1.GetType() + "', '" + lbl.Name + "', '" + lbl.FindForm().Name + "', 'FONT_COLOR', '" + label1.ForeColor.ToArgb() + "')");
+                SQLClass.Update("INSERT INTO " + SQLClass.UNIQUE_DESIGN + " (type, name, form, parameter, value) VALUES ('" + label1.GetType() + "', '" + lbl.Name + "', '" + lbl.FindForm().Name + "', 'FONT', '" + label1.Font.Name + ";" + label1.Font.Size.ToString() + "')");
+                SQLClass.Update("INSERT INTO " + SQLClass.UNIQUE_DESIGN + " (type, name, form, parameter, value) VALUES ('" + label1.GetType() + "', '" + lbl.Name + "', '" + lbl.FindForm().Name + "', 'FONT_COLOR', '" + label1.ForeColor.ToArgb() + "')");
             }
         }
     }

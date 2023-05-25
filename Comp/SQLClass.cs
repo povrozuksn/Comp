@@ -19,6 +19,46 @@ namespace Comp
         public static MySqlConnection CONN;
 
         /// <summary>
+        /// Таблица дизайна блоков
+        /// </summary>
+        public static string BLOCK_DISIGN = "blockdesign";
+
+        /// <summary>
+        /// Таблица пользователей
+        /// </summary>
+        public static string USERS = "user";
+
+        /// <summary>
+        /// Таблица городов
+        /// </summary>
+        public static string CITIES = "cities";
+
+        /// <summary>
+        /// Таблица Общего динайна
+        /// </summary>
+        public static string DEFAULT_DISIGN = "defaultdesign";
+
+        /// <summary>
+        /// Таблица Уровень 1
+        /// </summary>
+        public static string LEVEL1 = "level1";
+
+        /// <summary>
+        /// Таблица Уровень 2
+        /// </summary>
+        public static string LEVEL2 = "level2";
+
+        /// <summary>
+        /// Таблица Верхнего уровеня
+        /// </summary>
+        public static string MAIN = "main";
+
+        /// <summary>
+        /// Таблица уникального дизайна
+        /// </summary>
+        public static string UNIQUE_DESIGN = "uniquedesign";
+
+        /// <summary>
         /// Функция Select-запроса
         /// </summary>
         public static List<string> Select(string cmdText)

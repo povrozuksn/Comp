@@ -30,18 +30,18 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.TextboxFontButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.ButtonColorButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.ButtonFontButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.LabelFontButton = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelColorButton = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
@@ -63,7 +63,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1000, 600);
+            this.tabControl1.Size = new System.Drawing.Size(700, 600);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -74,46 +74,19 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(992, 562);
+            this.tabPage1.Size = new System.Drawing.Size(692, 562);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Дизайн текстбоксов";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // label2
             // 
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.ButtonColorButton);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.ButtonFontButton);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(992, 562);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Дизайн кнопок";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Controls.Add(this.LabelFontButton);
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(992, 562);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Дизайн лейблов";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.panel1);
-            this.tabPage4.Controls.Add(this.PanelColorButton);
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(992, 562);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Дизайн панелей";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(238, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 25);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Образец";
             // 
             // TextboxFontButton
             // 
@@ -133,14 +106,28 @@
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "Образец";
             // 
-            // label2
+            // tabPage2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(238, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 25);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Образец";
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.ButtonColorButton);
+            this.tabPage2.Controls.Add(this.button3);
+            this.tabPage2.Controls.Add(this.ButtonFontButton);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(992, 562);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Дизайн кнопок";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(334, 99);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 25);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Образец";
             // 
             // ButtonColorButton
             // 
@@ -171,14 +158,16 @@
             this.ButtonFontButton.UseVisualStyleBackColor = true;
             this.ButtonFontButton.Click += new System.EventHandler(this.ButtonFontButton_Click);
             // 
-            // label1
+            // tabPage3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(334, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 25);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Образец";
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.LabelFontButton);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(992, 562);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Дизайн лейблов";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -198,6 +187,17 @@
             this.LabelFontButton.Text = "Шрифт";
             this.LabelFontButton.UseVisualStyleBackColor = true;
             this.LabelFontButton.Click += new System.EventHandler(this.LabelFontButton_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.panel1);
+            this.tabPage4.Controls.Add(this.PanelColorButton);
+            this.tabPage4.Location = new System.Drawing.Point(4, 34);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(992, 562);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Дизайн панелей";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -229,7 +229,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DesignUserControl";
-            this.Size = new System.Drawing.Size(1000, 600);
+            this.Size = new System.Drawing.Size(700, 600);
             this.Load += new System.EventHandler(this.DesignUserControl_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

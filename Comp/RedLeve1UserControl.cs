@@ -16,7 +16,7 @@ namespace Comp
         {
             InitializeComponent();
 
-            List<string> main_list = SQLClass.Select("SELECT ID, Name FROM main");
+            List<string> main_list = SQLClass.Select("SELECT ID, Name FROM " + SQLClass.MAIN);
 
             comboBox1.Items.Clear();
             for (int i = 0; i < main_list.Count; i += 2)
@@ -31,7 +31,7 @@ namespace Comp
         {
             string[] parts = comboBox1.Text.Split(new char[] { ',' });
 
-            SQLClass.Update("INSERT INTO level1 (id_main, Name, Image, Quantity, Price)" +
+            SQLClass.Update("INSERT INTO " + SQLClass.LEVEL1 + " (id_main, Name, Image, Quantity, Price)" +
                               "VALUES('" + parts[0] + "', '" + NameTextBox.Text + "', '" + adress + "', '" + QuantityTextBox.Text + "', '" + PriceTextBox.Text + "')");
 
             MessageBox.Show("Сохранено");
@@ -41,7 +41,7 @@ namespace Comp
 
         private void RedLeve1UserControl_Load(object sender, EventArgs e)
         {
-            List<string> list = SQLClass.Select("SELECT ID, id_main, Name FROM level1");
+            List<string> list = SQLClass.Select("SELECT ID, id_main, Name FROM " + SQLClass.LEVEL1);
 
             panel1.Controls.Clear();
             int y = 10;
@@ -87,7 +87,7 @@ namespace Comp
             {
                 if (control.Location == new Point(50, y))
                 {
-                    SQLClass.Update("DELETE FROM level1 WHERE ID = '" + control.Tag + "'");
+                    SQLClass.Update("DELETE FROM " + SQLClass.LEVEL1 + " WHERE ID = '" + control.Tag + "'");
                     RedLeve1UserControl_Load(sender, e);
                     return;
                 }

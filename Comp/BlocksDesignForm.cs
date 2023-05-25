@@ -35,7 +35,7 @@ namespace Comp
             {
                 try
                 {
-                    string vk = SQLClass.Select("SELECT value FROM blockdesign WHERE name = '" + ctrl.Name + "' AND form = '" + parent.Name + "' AND parameter = 'VK'")[0];
+                    string vk = SQLClass.Select("SELECT value FROM " + SQLClass.BLOCK_DISIGN + " WHERE name = '" + ctrl.Name + "' AND form = '" + parent.Name + "' AND parameter = 'VK'")[0];
                     if(vk == "1")
                     {
                         CopyRightCLB.SetItemChecked(0, true);

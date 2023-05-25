@@ -18,8 +18,8 @@ namespace Comp
 
             double totalprice = 0;
 
-            List<string> lev1 = SQLClass.Select("SELECT ID, Name, Image FROM level1 WHERE ID = '" + id_level1 + "'");
-            List<string> lev2 = SQLClass.Select("SELECT ID, Name, Image, Specs, Quantity, Price FROM level2 WHERE id_level1 = '" + id_level1 + "'");
+            List<string> lev1 = SQLClass.Select("SELECT ID, Name, Image FROM " + SQLClass.LEVEL1 + " WHERE ID = '" + id_level1 + "'");
+            List<string> lev2 = SQLClass.Select("SELECT ID, Name, Image, Specs, Quantity, Price FROM " + SQLClass.LEVEL2 + " WHERE id_level1 = '" + id_level1 + "'");
 
             Text = lev1[1];
             label1.Text = lev1[1];

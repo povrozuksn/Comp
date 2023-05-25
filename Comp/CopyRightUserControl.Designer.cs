@@ -72,11 +72,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(821, 8);
+            this.label1.Location = new System.Drawing.Point(792, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 25);
+            this.label1.Size = new System.Drawing.Size(234, 25);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Все права защищены";
+            this.label1.Text = "©  Все права защищены";
             // 
             // CopyRightUserControl
             // 

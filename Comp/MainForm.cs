@@ -59,7 +59,7 @@ namespace Comp
             DesignUserControl.BUTTON_CM = contextMenuStrip1;
             DesignUserControl.LABEL_CM = contextMenuStrip2;
 
-            List<string> comps = SQLClass.Select("SELECT ID, Name FROM main");
+            List<string> comps = SQLClass.Select("SELECT ID, Name FROM " + SQLClass.MAIN);
             for(int i=0; i < comps.Count; i+=2)
             {
                 id_main = comps[i];
@@ -67,7 +67,7 @@ namespace Comp
                 node0.Tag = comps[i];
                 treeView1.Nodes[0].Nodes.Add(node0);
 
-                List<string> level1 = SQLClass.Select("SELECT ID, Name FROM level1 WHERE id_main = '" + id_main + "'");
+                List<string> level1 = SQLClass.Select("SELECT ID, Name FROM " + SQLClass.LEVEL1 + " WHERE id_main = '" + id_main + "'");
                 for(int j=0; j < level1.Count; j+=2)
                 {
                     id_level1 = level1[j];
@@ -75,7 +75,7 @@ namespace Comp
                     node1.Tag = level1[j];
                     node0.Nodes.Add(node1);
 
-                    List<string> level2 = SQLClass.Select("SELECT ID, Name FROM level2 WHERE id_level1 = '" + id_level1 + "'");
+                    List<string> level2 = SQLClass.Select("SELECT ID, Name FROM " + SQLClass.LEVEL2 + " WHERE id_level1 = '" + id_level1 + "'");
                     for(int g=0; g<level2.Count; g+=2)
                     {
                         TreeNode node2 = new TreeNode(level2[g+1]);
@@ -92,7 +92,7 @@ namespace Comp
         private void AuthButton_Click(object sender, EventArgs e)
         {
             List<string> user_data = SQLClass.Select(
-            "SELECT Login, Name, Surname, admin_id FROM users WHERE Login = '" + LoginTextBox.Text + "' and Password = '" + PaswTextBox.Text + "'");
+            "SELECT Login, Name, Surname, admin_id FROM " + SQLClass.USERS + " WHERE Login = '" + LoginTextBox.Text + "' and Password = '" + PaswTextBox.Text + "'");
 
             if (AuthButton.Text == "Выйти")
             {
@@ -125,6 +125,7 @@ namespace Comp
                     Login = user_data[0];
                     NameSurname = user_data[1] + " " + user_data[2];
                     AuthPanel.Controls.Clear();
+                    AuthPanel.Controls.Add(DesignButton);
                     AuthButton.Text = "Выйти";
                     AuthPanel.Controls.Add(AuthButton);
                     AdminPanelButton.Visible = isAdmin;
@@ -132,7 +133,6 @@ namespace Comp
                     AccountButton.Visible = true;
                     DesignButton.Visible = true;
                     AuthPanel.Controls.Add(AdminPanelButton);
-                    AuthPanel.Controls.Add(DesignButton);
                     AuthPanel.Controls.Add(HelloLabel);
                     HelloLabel.Text = "Приветствуем, " + NameSurname;
                     DesignUserControl.ApplyDesign(this);

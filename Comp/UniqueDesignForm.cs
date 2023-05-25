@@ -51,11 +51,11 @@ namespace Comp
 
                 UniqueDesignForm_Load(null, null);
 
-                SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'FONT'");
-                SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'FONT_COLOR'");
+                SQLClass.Update("DELETE FROM " + SQLClass.UNIQUE_DESIGN + " WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'FONT'");
+                SQLClass.Update("DELETE FROM " + SQLClass.UNIQUE_DESIGN + " WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'FONT_COLOR'");
 
-                SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'FONT', '" + button3.Font.Name + ";" + button3.Font.Size.ToString() + "')");
-                SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'FONT_COLOR', '" + button3.ForeColor.ToArgb() + "')");
+                SQLClass.Update("INSERT INTO " + SQLClass.UNIQUE_DESIGN + " (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'FONT', '" + button3.Font.Name + ";" + button3.Font.Size.ToString() + "')");
+                SQLClass.Update("INSERT INTO " + SQLClass.UNIQUE_DESIGN + " (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'FONT_COLOR', '" + button3.ForeColor.ToArgb() + "')");
             }
         }
 
@@ -72,24 +72,24 @@ namespace Comp
 
                 UniqueDesignForm_Load(null, null);
 
-                SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'COLOR'");
-                SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'COLOR', '" + button3.BackColor.ToArgb() + "')");
+                SQLClass.Update("DELETE FROM " + SQLClass.UNIQUE_DESIGN + " WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'COLOR'");
+                SQLClass.Update("INSERT INTO " + SQLClass.UNIQUE_DESIGN + " (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'COLOR', '" + button3.BackColor.ToArgb() + "')");
             }
         }
 
         private void SaveCoordButton_Click(object sender, EventArgs e)
         {
-            SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'LOCATION'");
-            SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'SIZE'");
+            SQLClass.Update("DELETE FROM " + SQLClass.UNIQUE_DESIGN + " WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'LOCATION'");
+            SQLClass.Update("DELETE FROM " + SQLClass.UNIQUE_DESIGN + " WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'SIZE'");
 
-            SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'LOCATION' , '" + ButtonCoordsTextBox.Text + "')");
-            SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'SIZE' , '" + ButtonSizeTextBox.Text + "')");
+            SQLClass.Update("INSERT INTO " + SQLClass.UNIQUE_DESIGN + " (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'LOCATION' , '" + ButtonCoordsTextBox.Text + "')");
+            SQLClass.Update("INSERT INTO " + SQLClass.UNIQUE_DESIGN + " (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'SIZE' , '" + ButtonSizeTextBox.Text + "')");
         }
 
         private void ButtonCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            SQLClass.Update("DELETE FROM uniqueDesign WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'ADMIN'");
-            SQLClass.Update("INSERT INTO uniqueDesign (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'ADMIN' , '" + ((ButtonCheckBox.Checked) ? "1": "0") + "')");
+            SQLClass.Update("DELETE FROM " + SQLClass.UNIQUE_DESIGN + " WHERE type = '" + button3.GetType() + "' AND name = '" + btn.Name + "' AND form = '" + btn.FindForm().Name + "' AND parameter = 'ADMIN'");
+            SQLClass.Update("INSERT INTO " + SQLClass.UNIQUE_DESIGN + " (type, name, form, parameter, value) VALUES ('" + button3.GetType() + "', '" + btn.Name + "', '" + btn.FindForm().Name + "', 'ADMIN' , '" + ((ButtonCheckBox.Checked) ? "1": "0") + "')");
         }
     }
 }
